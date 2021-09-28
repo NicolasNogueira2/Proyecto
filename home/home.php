@@ -15,7 +15,7 @@
 		<a  href="http://localhost/proyecto/home/home.php"><img class="img" src="logoHeader.png" width="120" height="100" /></a>
 		<nav>
 	<div class="search-box">
-		<input class="search-txt" type="text" name="" placeholder="Buscar producto......">
+		<input class="search-txt" type="text" name="" placeholder="Buscar producto..............">
 		<a class="search-btn" href="">
 			<i class="fas fa-search"></i>
 		</a>
