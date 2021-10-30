@@ -22,6 +22,7 @@ if  (isset($_GET['Codigo'])) {
 ?>
 
   ?>
+  <h1>hola chupaverga</h1>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
