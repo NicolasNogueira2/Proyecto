@@ -1,4 +1,6 @@
-
+html, body{
+	height: 100%;
+}
 	a{
 		text-decoration: none;
 		color: black;
@@ -140,7 +142,7 @@
 	padding: 15px;
 	color: white;
 	border-bottom: 1px solid white;
-	font-family: font-family: 'Roboto', sans-serif;
+	font-family: Helvetica;	
 
 }
 
@@ -158,6 +160,7 @@
 	padding: 15px 20px;
 	background: #29B9d9;
 	height: 25px;
+	font-family: Helvetica;	
 
 }
 .contenedor-menu .menu li a:hover {
@@ -165,8 +168,9 @@
 	color: white;
 }
 .contenedor-menu .menu .icono {
-	font: size 12px;
+	font: size 1px;
 	line-height: 18px;
+
 }
 .contenedor-menu .menu .icono.izquierda {
 	float: left;
@@ -185,6 +189,7 @@
 .contenedor-menu .menu ul li a{
 	background: #4694A6;
 	padding-left: none;
+	font-family: Helvetica;	
 
 }
 .contenedor-menu .menu ul li a:hover {
@@ -192,12 +197,13 @@
 	opacity: 80%;
 	color: white;
 
+
 }
 .contenedor-menu .menu .activado > a {
 	background: #4694A6;
+
 }
 #prod{
-	border: 1px solid #29B9d9;
 	width: 67%;
 	height: 700px;
 	float: left;
@@ -205,27 +211,178 @@
 	margin-left: 110px;
 }
 #foto{
-	border: 1px solid #29B9d9;
+	border: 0px solid #29B9d9;
 	width: 400px;
 	height: 400px;
 	float: left;
-	margin-top: 8%;
+	transition: 0.5s;
 	margin-left: 10%;
+	
+}
+#foto #zoom{
+	transition: transform .2s;
+}
+#foto #zoom:hover{
+	transform: scale(1.3);
 }
 #info{
-	border: 1px solid #29B9d9;
+	border-radius: 5px;
+	padding-left: 20px;
+	background: #E7E7E7;
 	width: 30%;
 	height: 300px;
 	float: right;
-	margin-top: 14%;
-	margin-right: 8%;
 }
+#info #precio{
+	color: #f56200;
+	font-family: Helvetica;		
+}
+
+#info #nombre{
+	color: #595959;
+	font-size: 30px;
+	font-family: Helvetica;
+}
+#info #stock{
+	color: #595959;
+	font-size: 20px;
+	font-family: Helvetica;		
+}
+#info #carrito_btn{
+	border-style: none;
+	margin-top: 10px;
+	margin-left: 20px;
+	padding-left: 43px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-right: 43px;
+	border-radius: 	5px;
+	font-size: 17px;
+	font-family: Helvetica;		
+	color: white;
+	background: #29B9d9;
+	float: center;
+}
+#info #carrito_btn:hover{
+	background: #4694A6;
+	cursor: pointer;
+}
+
 #descripcion{
-	border: 1px solid #29B9d9;
-	width: 82%;
-	height: 200px;
+	color: #595959;
+	font-family: Helvetica;
+	border-radius: 4px;
+	padding: 5px;
+	width: 89%;
+	height: auto;
 	float: right;
 	margin-top: 2%;
-	margin-right: 8%;
-	margin-left: 10%;
+
+	background: #E7E7E7;
+}
+#contacto{
+	height: auto;	
+	width: auto%;	
+	float: left;
+	display: inline-block;
+	margin-left: 40px;
+}
+#contacto #contact{
+	font-family: Helvetica;
+	color: #595959;
+	font-weight: bold;
+}
+/* Añadir a carrito*/
+ .ventana{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.ventana{
+	position: fixed; /*define una posición relativa*/
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.5); /*colores que se determian como rgb y al final la opacidad para que sea transparente*/
+	transition: all 500ms ease;
+	opacity: 0;
+	visibility: hidden; /*oculta la ventana ya que necesitamos que se abra al hacer click en el boton*/
+}
+
+/*ACLARACIÓN COMO EL BOTON Y LA X TIENEN EL MISMO ID, CUANDO SE DE CLIC EN EL BOTÓN EL CHECK SE ACTIVARA Y MOSTRARÁ 
+LA VENTANA, AL DAR EN X SE DESACTIVA CHECK POR ENDE SE CIERRA*/
+
+#btn-up:checked ~ .ventana{
+	opacity: 1;
+	visibility: visible;
+}
+
+.contenedor{
+	width: 350px;
+	height: 200px;
+	margin: auto; /*para que se centre el elemetno de forma automatica*/
+	background: #ffff;
+	box-shadow: 1px 7px 25px black; /*efecto sombra*/
+	transition: all 500ms ease;
+	position: relative;
+	transform: translateY(-30%);
+}
+
+#btn-up:checked ~ .ventana .contenedor{
+	transform: translateY(0);   /*da efecto de traslacion en el eje de las y, por ende en el sentido vertical*/
+}
+
+.contenedor header{
+	padding: 20px;
+	background: #29B9d9;
+	color: #ffff;
+	font-family: helvetica;
+}
+
+.contenedor label{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	color: #ffff;
+	cursor: pointer;
+}
+
+#btn-up{
+	position: absolute;
+	top: 20px;
+	left: 200px;
+	display: none;  /*para que no muestre el cuadrito del check*/
+}
+
+
+.up:hover{
+color:#2ABF95
+}
+.contenido input {
+	margin-left: 50px;
+	margin-top: 50px;
+	width: 70%;
+
+}
+
+.contenedor .fot{
+	padding: 10px;
+	background: #29B9d9;
+	color: #ffff;
+	font-family: helvetica;
+	bottom: 0px;
+	height: 18px;
+	margin-top: 50px;
+}
+.fot .btn_submit{
+	text-decoration: none;
+	float: right;
+	color: white;
+	margin-top: -4px;
+	color: black;
+	font-size: 20px;
+	padding: 0;
+	font-family: Helvetica;
+	text-decoration: none;
 }

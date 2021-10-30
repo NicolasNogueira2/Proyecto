@@ -1,0 +1,401 @@
+
+a{
+	text-decoration: none;
+	color: black;
+}
+#general{
+	width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+#main-header {
+	color: white;
+	width: 100%;
+	height: 100px;
+    border: 1px solid #29B9d9;
+}	
+	#main-header a {
+		color: white;
+
+	}
+#main-header .img{
+	padding-left: 0;
+	position: relative;
+	text-decoration: none;
+	margin-top: 0px;
+	height: 100px;
+	width: 20%;
+	margin-left: 50px;
+	padding: 5px;
+
+
+}
+/*
+ * Navegación
+ */
+#main-header nav {
+	float: right;
+	width:69%;
+	background: #29B9d9;
+	height: 100%;
+}
+
+
+	#main-header nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		float: right;
+		margin-top: 12px;
+		
+	}
+/*	#main-header #buscar {
+		float: left;
+		margin-left: 50px;
+		margin-top: 30px;
+	}
+	*/
+#main-header nav .search-box {
+	background: white;
+	height: 18px;
+	border-radius: 3px;
+	padding: 10px;
+	width: 30%;
+	margin-top: 30px;
+	float: left;
+	margin-left: 5%;
+}
+#main-header nav .search-btn{
+	color: skyblue ;
+	float: right;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    text-decoration: none;
+}
+#main-header nav .search-txt {
+	border: none;
+	background: none;
+	outline: none;
+	padding: 0;
+	color: black;
+	font-size: 14px;
+	transition: 0.4s;
+	width: 85%;
+	margin-left: 20px;
+	float: left;
+}
+
+	
+		#main-header nav ul li {
+			display: inline-block;
+			line-height: 80px;
+			text-decoration: none;
+
+		}			
+			#main-header nav ul li a {
+				display: block;
+				padding-left: 32px;
+				padding-right: 32px;
+				text-decoration: none;	
+				size: 30%;
+
+			}
+			#main-header nav ul li a i{
+				font-size: 25px;
+			}
+			
+			#main-header nav ul li .logitos{
+				display: block;
+				padding-right: 10px;
+				text-decoration: none;
+
+			}
+				#main-header nav ul li a:hover {
+					background: #4694A6;
+				}
+
+
+
+
+.contenedor-menu {
+	width: 26%;	
+	float: left;
+	display: inline-block;
+	margin-top: 50px;
+	margin-right: 10px;
+	margin-left: -39px;
+
+
+}
+.contenedor-menu .menu .titulo{
+	background: #29B9d9;
+	text-align: center;
+	padding: 15px;
+	color: white;
+	border-bottom: 1px solid white;
+	font-family: Helvetica;	
+font-weight: bold;
+
+}
+
+.contenedor-menu .menu {
+	margin: 0px;
+	height: 50%;
+	width: 400px;
+	border-radius: 5px;
+}
+.contenedor-menu ul{
+	list-style: none;
+}
+.contenedor-menu .menu li a{
+	color: white;
+	display: block;
+	padding: 15px 20px;
+	background: #29B9d9;
+	height: 25px;
+	font-family: Helvetica;	
+
+}
+.contenedor-menu .menu li a:hover {
+	background:#4694A6;
+	color: white;
+}
+.contenedor-menu .menu .icono {
+	font: size 12px;
+	line-height: 18px;
+
+}
+.contenedor-menu .menu .icono.izquierda {
+	float: left;
+	margin-right: 10px;
+}
+.contenedor-menu .menu .icono.derecha {
+	float: right;
+	margin-left: ;: 10px;
+}
+.contenedor-menu .menu ul{
+	display: none;
+	padding: 0;
+	font-family: Helvetica;	
+
+}
+
+.contenedor-menu .menu ul li a{
+	background: #4694A6;
+	padding-left: none;
+	font-family: Helvetica;	
+
+}
+.contenedor-menu .menu ul li a:hover {
+	background: #595959;
+	opacity: 80%;
+	color: white;
+	font-family: Helvetica;	
+
+}
+.contenedor-menu .menu .activado > a {
+	background: #4694A6;
+	font-family: Helvetica;	
+}
+#prod{
+	margin-right: auto;
+	width: 67%;
+	height: 566px;
+	float: left;
+	margin-top: 50px;
+	margin-left: 110px;
+}
+
+#filtro{
+	margin-left: 3px;
+	margin-right: 3px;
+	height: 3%;
+	background: white;
+}
+.producto{
+	width: auto;
+	max-width: auto;
+	height: auto;
+	display:flex ;
+	flex-wrap: wrap;
+	justify-content: Left;
+	overflow: hidden;
+}
+ .producto .card{
+ 	background: #F8F7F7;
+ 	display: block;
+	width: 250px;
+	height: 270px;
+	border-radius: 5px;
+	box-shadow: 0 2px 2px #29B9d9;
+	overflow: hidden;
+	margin: 20px;
+	padding-top: 20px;
+	text-align: center;
+	transition: all 0.30s;
+
+
+}
+.producto .card .imagen{
+	border-radius: 5px;
+}
+.producto .card .letras .precio{
+	color: #f56200;
+	font-family: Helvetica;
+	font-style: ;
+	font-weight: bold;
+	}
+	.producto .card .letras .nombre{
+	font-family: Helvetica;
+	color: #666565;
+	margin-left: 5px;
+	padding-bottom: 5PX	;
+	font-weight: bold;
+	}
+	.producto .card .letras{
+		background: #E7E7E7;
+		margin-left: 14px;
+		margin-right: 14px;
+		border-radius: 	5px;
+	}
+.producto .card:hover{
+	transform: translate(-10px);
+	box-shadow: 0 6px 8px #4694A6;
+}
+#contacto{
+	height: auto;	
+	width: auto%;	
+	float: left;
+	display: inline-block;
+	margin-left: 40px;
+}
+#contacto #contact{
+	font-family: Helvetica;
+	color: #595959;
+	font-weight: bold;
+}
+ .btn_submit{ /*modifico el submit especificamente*/
+	padding: 5px;
+	color: white;
+	border: none; /*porque el borde default de la compu era como sombreado*/
+	font-size: 15px;
+	border-radius: 6px; /* borde redondo */
+	background: #29B9d9;
+	margin-top: 30px;
+}
+.btn_submit:hover{ /*HOVER: comportamiento cuando el cursor cuadno pasa por el boton*/
+	background: #4694A6; /*cambiar el color cuando pasa por el boton*/
+	cursor: pointer; /*cambia a manito cuando pasas por el boton*/
+}
+.btn_submit{ /*modifico el button especificamente*/
+	padding: 5px;
+	color: white;
+	border: none; /*porque el borde default de la compu era como sombreado*/
+	font-size: 15px;
+	border-radius: 6px; /* borde redondo */
+	background: #29B9d9;
+	margin-top: 15px;
+}
+
+
+/* LOGIN */
+
+
+#prod{
+	margin-right: auto;
+	width: 67%;
+	height: 566px;
+	float: left;
+	margin-top: 50px;
+	margin-left: 110px;
+}
+ #prod form{
+ 	width: 230px;
+ 	border: 3px solid #29B9d9;
+	margin-right : auto ;
+	margin-left: auto;
+ 	padding: 50px;
+ 	text-align: center; /*Se alinea el texto en este caso al centro*/
+ 	background: white;
+ 	border-radius: 7px;
+ 	color: #29B9d9;
+ }	
+ form .titulo{
+ 	font-size: 23px;
+ 	border-bottom:1px solid #29B9d9;
+ }
+ label{
+ 	font-size: 12px;	
+ }
+ #prod input{
+ 	font-family: Arial ;
+ 	padding: 10px;
+ 	width: 80%;
+ 	background: white;
+ 	border: white;
+ 	border-bottom:1px solid #29B9d9;
+ 	
+ }
+
+ input:focus{ 
+ 	outline: none;
+
+ }
+#prod input[type="Submit"]{ /*modifico el submit especificamente*/
+	padding: 5px;
+	color: white;
+	border: none; /*porque el borde default de la compu era como sombreado*/
+	font-size: 15px;
+	border-radius: 6px; /* borde redondo */
+	background: #29B9d9;
+	margin-top: 30px;
+	background: #29B9d9;
+}
+#prod input[type="Submit"]:hover{ /*HOVER: comportamiento cuando el cursor cuadno pasa por el boton*/
+	background: #4694A6; /*cambiar el color cuando pasa por el boton*/
+	cursor: pointer; /*cambia a manito cuando pasas por el boton*/
+
+}
+#prod input[type="button"]{ /*modifico el button especificamente*/
+	padding: 5px;
+	color: white;
+	border: none; /*porque el borde default de la compu era como sombreado*/
+	font-size: 15px;
+	border-radius: 6px; /* borde redondo */
+	background: #29B9d9;
+	margin-top: 15px;
+}
+#prod input[type="button"]:hover{ /*HOVER: comportamiento cuando el cursor cuadno pasa por el boton*/
+	background: #4694A6; /*cambiar el color cuando pasa por el boton*/
+	cursor: pointer; /*cambia a manito cuando pasas por el boton*/
+}
+#prod input[type="radio"]{
+	text-align: left;
+	padding: 100px;
+}
+.ok{
+ 	text-align: center;
+ 	width: 23%;
+ 	padding: 12px;
+ 	background-color: #29B9d9;
+ 	color: #FFF;
+	margin-right : auto ;
+	margin-left: auto;
+	border-radius: 7px;
+}
+.bad {
+	text-align: center;
+ 	width: 23%;
+ 	padding: 12px;
+ 	background-color: red;
+ 	color: #FFF;
+	margin-right : auto ;
+	margin-left: auto;
+	border-radius: 7px;
+}

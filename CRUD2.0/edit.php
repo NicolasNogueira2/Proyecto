@@ -5,6 +5,7 @@ $Descripcion= '';
 $Codigo= '';
 $Stock= '';
 $Precio= '';
+$imagen= '';
 
 if  (isset($_GET['Codigo'])) {
   $id = $_GET['Codigo'];
@@ -24,10 +25,12 @@ if (isset($_POST['update'])) {
   $Codigo = $_GET['Codigo'];
   $Nombre= $_POST['Nombre'];
   $Descripcion = $_POST['Descripcion'];
+  $estado = $_POST['estado'];
+  $tipo_iva = $_POST['tipo_iva'];
   $Stock = $_POST['Stock'];
   $Precio = $_POST['Precio'];
-
-  $query = "UPDATE producto set Nombre = '$Nombre', Descripcion = '$Descripcion', Stock = '$Stock', Precio = '$Precio' WHERE Codigo=$Codigo";
+  $Destacado = $_POST['Destacado'];
+  $query = "UPDATE producto set Nombre = '$Nombre', Descripcion = '$Descripcion',estado = '$estado',Destacado = '$Destacado', tipo_iva = '$tipo_iva', Stock = '$Stock', Precio = '$Precio' WHERE Codigo=$Codigo";
   mysqli_query($con, $query);
   $_SESSION['message'] = 'Producto modificado correctamente';
   $_SESSION['message_type'] = 'warning';
@@ -40,7 +43,7 @@ if (isset($_POST['update'])) {
   <div class="row">
     <div class="col-md-4 mx-auto">
       <div class="card card-body">
-      <form action="edit.php?Codigo=<?php echo $_GET['Codigo']; ?>" method="POST">
+      <form action="edit.php?Codigo=<?php echo $_GET['Codigo']; ?>" method="POST" enctype="multipart/form-data">
         <!-- 
         <div class="form-group">
           <input name="Codigo" type="int" class="form-control" value="<?php echo $Codigo; ?>" placeholder="Codigo">
@@ -58,9 +61,45 @@ if (isset($_POST['update'])) {
         <div class="form-group">
           <input name="Precio" type="int" class="form-control" value="<?php echo $Precio; ?>" placeholder="Precio">
         </div>
+        <div class="form-group">
+            <select name="estado">
+              <option value="activo">Activo</option>
+              <option value="inactivo">Inactivo</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <select name="tipo_iva">
+              <option value="1">Tipo iva 1</option>
+              <option value="2">Tipo iva 2</option>
+              <option value="3">Tipo iva 3</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+          <select name="Destacado">
+              <option value="Normal">Normal</option>
+              <option value="Destacado">Destacado</option>
+            </select>
+          </div>
+        <div class="form-group">
+            <img height="50px" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/>
+            <a href="edit_img.php?Codigo=<?php echo $row['codigo']?>" class="btn btn-secondary">
+                <i class="fas fa-marker"></i>
+              </a>
+          </div>
         <button class="btn-success" name="update">
           Modificar
-</button>
+        </button>
+        <button  class="btn-success"> 
+          <a href="http://localhost/proyecto/CRUD2.0/index.php">Volver</a>
+         
+        </button>
+        <style>
+          .btn-success a{
+            text-decoration: none;
+            color: white;
+          }
+        </style>
       </form>
       </div>
     </div>

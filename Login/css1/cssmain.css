@@ -1,4 +1,3 @@
-
 a{
 	text-decoration: none;
 	color: #FFFFFF;
@@ -141,7 +140,7 @@ a{
 	padding: 15px;
 	color: white;
 	border-bottom: 1px solid white;
-	font-family: font-family: 'Roboto', sans-serif;
+	font-family: Helvetica;	
 
 }
 
@@ -159,7 +158,7 @@ a{
 	padding: 15px 20px;
 	background: #29B9d9;
 	height: 25px;
-
+	font-family: Helvetica;	
 }
 .contenedor-menu .menu li a:hover {
 	background:#4694A6;
@@ -205,7 +204,7 @@ a{
 	margin-top: 50px;
 	margin-left: 110px;
 }
-form{
+.login{
  	width: 230px;
  	border: 3px solid #29B9d9;
 	margin-right : auto ;
@@ -238,7 +237,7 @@ form{
 
 
  }
- input[type="Submit"]{ /*modifico el submit especificamente*/
+.btn_submit{ /*modifico el submit especificamente*/
 	padding: 5px;
 	color: white;
 	border: none; /*porque el borde default de la compu era como sombreado*/
@@ -266,5 +265,5 @@ input[type="button"]:hover{ /*HOVER: comportamiento cuando el cursor cuadno pasa
 }
 input[type="radio"]{
 	text-align: left;
-	padding: 100px;
+	padding: 100px;	
 }
