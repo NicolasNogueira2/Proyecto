@@ -49,12 +49,6 @@ a{
 		float: right;
 		margin-top: 12px;
 	}
-/*	#main-header #buscar {
-		float: left;
-		margin-left: 50px;
-		margin-top: 30px;
-	}
-	*/
 #main-header nav .search-box {
 	background: white;
 	height: 18px;
@@ -140,7 +134,7 @@ a{
 	padding: 15px;
 	color: white;
 	border-bottom: 1px solid white;
-	font-family: font-family: 'Roboto', sans-serif;
+	font-family: Helvetica;	
 
 }
 
@@ -158,6 +152,7 @@ a{
 	padding: 15px 20px;
 	background: #29B9d9;
 	height: 25px;
+	font-family: Helvetica;	
 
 }
 .contenedor-menu .menu li a:hover {
