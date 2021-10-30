@@ -1,27 +1,5 @@
  <!DOCTYPE html>
-  <?php include 'db.php'; 
-  $Nombre = '';
-$Descripcion= '';
-$Codigo= '';
-$Stock= '';
-$Precio= '';
-$imagen= '';
-
-if  (isset($_GET['Codigo'])) {
-  $id = $_GET['Codigo'];
-  $query = "SELECT * FROM producto WHERE Codigo=$id";
-  $result = mysqli_query($con, $query);
-  if (mysqli_num_rows($result) == 1) {
-    $row = mysqli_fetch_array($result);
-    $Nombre = $row['Nombre'];
-    $Descripcion = $row['Descripcion'];
-    $Stock = $row['Stock'];
-    $Precio = $row['Precio'];
-  }
-}
-?>
-
-  ?>
+ <?php include("db.php"); ?>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
@@ -133,25 +111,39 @@ if  (isset($_GET['Codigo'])) {
 				<p>Carrito</p>
 			</div>
 			<div id="content">
-		<table>
-			<thead>
-          		<tr>
-            		<th>Imagen</th>
-            		<th>Nombre</th>
-            		<th>Precio</th>
-            		<th>cantidad</th>
-            		<th>Total</th>
-     	     	</tr>
-        	</thead>
-		<tbody>
-			
+		<table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Stock</th>
+            <th>Precio</th>
+            <th>Iva</th>
+            <th>Estado</th>
+            <th>Destacado</th>
+            <th>Imagen</th>
+          </tr>
+        </thead>
+        <tbody>
           
-       
-        	
-          
+        <?php
+          $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo "); 
+          while($row = mysqli_fetch_assoc($consulta)) { ?>
+          <tr>
+            <td><?php echo $row['codigo']; ?></td>
+            <td><?php echo $row['Nombre']; ?></td>
+            <td><?php echo $row['Descripcion']; ?></td>
+            <td><?php echo $row['Stock']; ?></td>
+            <td>$<?php echo $row['Precio']; ?></td>
+            <td><?php echo $row['tipo_iva']; ?></td>
+            <td><?php echo $row['estado']; ?></td>
+            <td><?php echo $row['destacado']; ?></td>
+            <td><img height="50px" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/></td>
+          </tr>
+          <?php } ?>
         </tbody>
       </table>
-				<?php include 'db.php'; ?>
 
 			</div>
 
