@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0 ">
-	<title>Razer</title>
+	<title>carrito</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap">
 	<link rel="stylesheet" href="css\all.min.css">
 	<link rel="stylesheet" type="text/css" href="css1/cssmain.css">
@@ -114,15 +114,14 @@
 		<table class="table table-bordered">
         <thead>
           <tr>
-            <th>Codigo</th>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Stock</th>
-            <th>Precio</th>
-            <th>Iva</th>
-            <th>Estado</th>
-            <th>Destacado</th>
-            <th>Imagen</th>
+          	<th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+
+            
           </tr>
         </thead>
         <tbody>
@@ -131,15 +130,17 @@
           $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo "); 
           while($row = mysqli_fetch_assoc($consulta)) { ?>
           <tr>
-            <td><?php echo $row['codigo']; ?></td>
-            <td><?php echo $row['Nombre']; ?></td>
-            <td><?php echo $row['Descripcion']; ?></td>
-            <td><?php echo $row['Stock']; ?></td>
-            <td>$<?php echo $row['Precio']; ?></td>
-            <td><?php echo $row['tipo_iva']; ?></td>
-            <td><?php echo $row['estado']; ?></td>
-            <td><?php echo $row['destacado']; ?></td>
+            
             <td><img height="50px" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/></td>
+            <td><?php echo $row['Nombre']; ?></td>
+            <td>$<?php echo $row['Precio']; ?></td>
+            <td><?php echo $row['cantidad']; ?></td>
+            <td>$<?php echo $row['subTotal']; ?></td>
+            <td>
+            <a href="delete_producto.php?Codigo=<?php echo $row['Codigo']?>" class="btn btn-danger">
+                  <i class="far fa-trash-alt"></i>
+            </a>
+            </td>
           </tr>
           <?php } ?>
         </tbody>
