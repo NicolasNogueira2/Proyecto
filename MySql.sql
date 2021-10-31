@@ -10,7 +10,7 @@
 	tipo_iva varchar(1),
 	Precio int(10),
 	imagen longblob,
-	destacado varchar (15)
+	destacado varchar (15),
 	primary key (codigo));
 
 	Create table Usuario(
