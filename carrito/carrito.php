@@ -29,7 +29,7 @@
 
 			<ul>
 				<li><a href="http://localhost/proyecto/ubicacion/ubicacion.php"><i class="fas fa-map-marker-alt"></i></a></li>
-				<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+				<li><a href="http://localhost/proyecto/carrito/carrito.php"><i class="fas fa-shopping-cart"></i></a></li>
 				<li><a href="http://localhost/proyecto/Login/login.php"><i class="fas fa-sign-in-alt"></i></a></li>
 			</ul>
 		</nav>
@@ -115,9 +115,10 @@
         <thead>
           <tr>
           	<th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
             <th></th>
             <th></th>
 
@@ -147,15 +148,38 @@
       </table>
 
 			</div>
-
-			<div id="footer">
-				
-			</div>
-
-			
 		</div>
-	</div>
+			<div id="TotalCarrito">
+			<div id="contenido">
+						<div id="Sub1">
+							<li>Hola</li>
+						</div>
+						<div id="Envio1">
+							<input type="checkbox" name="" id="uno"> Retirar en el local<br>
+							<input type="checkbox" name="" id="dos"> Montevideo: US$7.00 <br>
+							<input type="checkbox" name="" id="tres"> Interior: US$10.00 <br> 	
+							<input type="checkbox" name="" id="cuatro"> Canelones: US$3.00 <br> 	
+						</div>
+						<div id="Total1">
+							<li>1</li>
+						</div>
+		<div id="contenido2">	
+							<div id="Sub">
+							<li>Subtotal</li>
+							</div>
+							<div id="Envio">
+							<li>Envio</li>
+							</div>
+							<div id="Total">
+							<li>Total</li>
+							</div>
+		</div>
 </div>
+</div>
+	</div>
+
+</div>
+
 
 
 

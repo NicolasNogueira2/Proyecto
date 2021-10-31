@@ -25,7 +25,7 @@
 
 			<ul>
 				<li><a href="http://localhost/proyecto/ubicacion/ubicacion.php"><i class="fas fa-map-marker-alt"></i></a></li>
-				<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+				<li><a href="http://localhost/proyecto/carrito/carrito.php"><i class="fas fa-shopping-cart"></i></a></li>
 				<li><a href="http://localhost/proyecto/Login/login.php"><i class="fas fa-sign-in-alt"></i></a></li>
 			</ul>
 		</nav>

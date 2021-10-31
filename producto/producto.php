@@ -47,7 +47,7 @@ if  (isset($_GET['Codigo'])) {
 
 			<ul>
 				<li><a href="http://localhost/proyecto/ubicacion/ubicacion.php"><i class="fas fa-map-marker-alt"></i></a></li>
-				<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+				<li><a href="http://localhost/proyecto/carrito/carrito.php"><i class="fas fa-shopping-cart"></i></a></li>
 				<li><a href="http://localhost/proyecto/Login/login.php"><i class="fas fa-sign-in-alt"></i></a></li>
 			</ul>
 		</nav>
@@ -147,7 +147,7 @@ if  (isset($_GET['Codigo'])) {
 			<div class="contenido">
 
 				<form method="post">
-					<input type="Int" name="cantidad" value="0" > <br>
+					<input type="Int" name="cantidad" value="1" > <br>
 					
 			<div class="fot">
 				<input type="submit" name="addcarrito" value="Enviar al carrito" class="btn_submit">
