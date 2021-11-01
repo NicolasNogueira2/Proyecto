@@ -7,7 +7,7 @@
     <title>CRUD </title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- BOOTSTRAP 4 -->
-    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+   <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
     <!-- FONT AWESOEM -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   </head>
@@ -94,12 +94,14 @@
           </div>
           <div class="form-group">
             <select name="estado">
+              <option selected value="">Seleccione una opción</option>
               <option value="activo">Activo</option>
               <option value="inactivo">Inactivo</option>
             </select>
           </div>
           <div class="form-group">
-          <select name="tipo_iva">
+          <select name="tipo_iva" required><br>
+              <option selected value="">Seleccione una opción</option>
               <option value="1">Tipo iva 1</option>
               <option value="2">Tipo iva 2</option>
               <option value="3">Tipo iva 3</option>
@@ -108,6 +110,7 @@
 
           <div class="form-group">
           <select name="Destacado">
+            <option selected value="">Seleccione una opción</option>
               <option value="Normal">Normal</option>
               <option value="Destacado">Destacado</option>
             </select>
