@@ -152,7 +152,7 @@
 			<div id="TotalCarrito">
 			<div id="contenido">
 						<div id="Sub1">
-							<li>Hola</li>
+							<li></li>
 						</div>
 						<div id="Envio1">
 							<input type="checkbox" name="" id="uno"> Retirar en el local<br>
@@ -179,6 +179,7 @@
 	</div>
 
 </div>
+
 
 
 
