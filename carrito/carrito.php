@@ -128,7 +128,7 @@
         <tbody>
           
         <?php
-          $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo "); 
+          $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo"); 
           while($row = mysqli_fetch_assoc($consulta)) { ?>
           <tr>
             
