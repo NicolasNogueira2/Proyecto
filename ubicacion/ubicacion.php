@@ -26,10 +26,8 @@
 
 			<ul>
 				<li><a href="http://localhost/proyecto/ubicacion/ubicacion.php"><i class="fas fa-map-marker-alt"></i></a></li>
-				<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-				<li>
-		 <a href="http://localhost/proyecto/Login/login.php"><i class="fas fa-sign-in-alt"></i></a>
-		</li>
+				<li><a href="http://localhost/proyecto/carrito/carrito.php"><i class="fas fa-shopping-cart"></i></a></li>
+				<li><a href="http://localhost/proyecto/Login/login.php"><i class="fas fa-sign-in-alt"></i></a></li>
  
 
 			</ul>
@@ -52,14 +50,6 @@
 				<li><a href="http://localhost/proyecto/home/catsel/catselTecR.php">Razer</a></li>
 				<li><a href="http://localhost/proyecto/home/catsel/catselTecL.php">Logitech</a></li>
 				<li><a href="http://localhost/proyecto/home/catsel/catselTecH.php">HyperX</a></li>
-			</ul>
-		</li>
-		<li><a href="#"><i class="icono izquierda	fas fa-mouse"></i> Mouse  <i class="icono derecha	fas fa-chevron-down"></i></a>
-			<ul>
-
-				<li><a href="http://localhost/proyecto/home/catsel/catselMouR.php">Razer</a></li>
-				<li><a href="http://localhost/proyecto/home/catsel/catselMouL.php">Logitech</a></li>
-				<li><a href="http://localhost/proyecto/home/catsel/catselMouH.php">HyperX</a></li>
 			</ul>
 		</li>
 		<li><a href="#"><i class="icono izquierda	fas fa-headphones-alt"></i> Auricular <i class="icono derecha	fas fa-chevron-down"></i></a>
