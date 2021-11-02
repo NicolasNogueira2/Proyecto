@@ -3,7 +3,7 @@
 	try {
 		$base=new PDO("mysql:host=localhost; dbname=proyecto", "root", "");
 		$base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql="SELECT * FROM USUARIO WHERE Email= :login AND contra= :contra";
+		$sql="SELECT * FROM USUARIO WHERE Email= :login AND contra= :contra and tipo_user = '1'";
 		$resultado=$base->prepare($sql);
 		$login=htmlentities(addslashes($_POST["login"]));
 		$contra=htmlentities(addslashes($_POST["contra"]));

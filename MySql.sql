@@ -18,6 +18,7 @@
 	email varchar (30) UNIQUE,
 	contra varchar (40),
 	telefono int(20),
+	tipo_user varchar(1),
 	primary key (CI));
 
 	Create table Cliente(
@@ -96,4 +97,5 @@
 	Foreign key (idVendedor) references Vendedor (idVendedor)
 	);
 
+Insert into Usuario (CI, email, contra, tipo_user) Values ('56873873', 'admin@gmail.com', 'lp2021', '1')
 
