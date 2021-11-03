@@ -63,12 +63,14 @@ if (isset($_POST['update'])) {
         </div>
         <div class="form-group">
             <select name="estado">
+              <option selected value="">Seleccione una opción</option>
               <option value="activo">Activo</option>
               <option value="inactivo">Inactivo</option>
             </select>
-        </div>
-        <div class="form-group">
-          <select name="tipo_iva">
+          </div>
+          <div class="form-group">
+          <select name="tipo_iva" required><br>
+              <option selected value="">Seleccione una opción</option>
               <option value="1">Tipo iva 1</option>
               <option value="2">Tipo iva 2</option>
               <option value="3">Tipo iva 3</option>
@@ -77,6 +79,7 @@ if (isset($_POST['update'])) {
 
           <div class="form-group">
           <select name="Destacado">
+            <option selected value="">Seleccione una opción</option>
               <option value="Normal">Normal</option>
               <option value="Destacado">Destacado</option>
             </select>

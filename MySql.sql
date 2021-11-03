@@ -3,7 +3,7 @@
 
 	create table producto(
 	codigo int (15) auto_increment,
-	Nombre varchar (25),
+	Nombre varchar (60),
 	Descripcion varchar (1000),
 	estado varchar (15),
 	Stock int (100),

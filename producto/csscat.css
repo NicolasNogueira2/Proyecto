@@ -231,7 +231,7 @@ font-weight: bold;
  	background: #F8F7F7;
  	display: block;
 	width: 250px;
-	height: 270px;
+	height: auto;
 	border-radius: 5px;
 	box-shadow: 0 2px 2px #29B9d9;
 	overflow: hidden;

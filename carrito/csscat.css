@@ -231,7 +231,7 @@ font-weight: bold;
  	background: #F8F7F7;
  	display: block;
 	width: 250px;
-	height: 270px;
+	height: auto;
 	border-radius: 5px;
 	box-shadow: 0 2px 2px #29B9d9;
 	overflow: hidden;
@@ -292,91 +292,4 @@ font-weight: bold;
 	font-weight: bold;
 	margin-left: 100px;
 }
- .slider img{
- 	width: 645px;
- 	height: 430px;
-
-}
-.slider{
-	width: 645px;
-	height: 800px;
-	margin: auto;
-	display: flex;
-	flex-wrap: wrap; /*La propiedad flex-wrap de CSS especifica si los elementos 
-	"hijos" son obligados a permanecer en una misma línea o pueden fluir en varias líneas*/
-	overflow: hidden; /*para que se oculte aquel contenido que se sale de la ventana o el contenedor*/
-
-}
-
-.slider ul{
-	width: 400%;
-	height: 150px;
-	display: flex;
-	list-style: none;
-	order: 1;
-	transition: all 0.9s;
-
-}
-
-input[type="radio"]{
-	display: none;
-}
-
-/*el simbolo de + se utiliza para trabajar etqiuetas adyasentes
-es decir, una etiqueta que esta a continuacion de la otra*/
-
-
-input[type="radio"] + label {
-	display: block;
-	width: 130px;
-	height: 85px;
-	margin:10px auto;
-	background-color: red;
-	border: 1px solid black;
-	cursor: pointer;
-	order: 2;
-	z-index: 50;
-	
-}
-
-/*utlizar imagenes mas chicas para eviatar el peso de los archivos*/
-
-#boton1 + label {
-	background: url(../img/1min.jpg);
-	background-size: cover;
-}
-
-#boton2 + label {
-	background: url(../img/2-min.jpg);
-	background-size: cover;
-}
-
-#boton3 + label {
-	background: url(../img/3-min.jpg);
-	background-size: cover;
-}
-
-#boton4 + label {
-	background: url(../img/4-min.jpg);
-	background-size: cover;
-}
-
-#boton1:checked ~ ul{
-	margin-left: 0;
-
-}
-
-#boton2:checked ~ ul{
-	margin-left: -100%;
-
-}
-
-#boton3:checked ~ ul{
-	margin-left: -200%;
-
-}
-
-#boton4:checked ~ ul{
-	margin-left: -300%;
-
-}
+ 
