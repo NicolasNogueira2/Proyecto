@@ -11,7 +11,11 @@
 	
 </head>
 <body>
-	<?php session_start(); ?>
+	<?php
+	
+	 session_start(); 
+		
+	?>
 	<div id="general">
 	<div id="main-header">
 	

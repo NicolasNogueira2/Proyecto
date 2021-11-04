@@ -102,7 +102,7 @@
 </div>
 <div id="prod">
 	<?php 
-	if(!isset($_SESSION["usuario"])){
+	if(!isset($_SESSION["usuario"]) and !isset($_SESSION["usuarioCRUD"])){
 		?>	
 		<form action="comprueba_login.php" method="post">
 		<p>INICIAR SESION</p>
@@ -120,7 +120,7 @@
 			</table>
 	</form>
 	
-	<?php } else { 
+	<?php } elseif (isset($_SESSION["usuario"])){
 		?>
 		<div id="logueado">
 		<?php
@@ -129,7 +129,15 @@
 		<p id="leave"><a href="cierre.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a></p>
 		</div>
 		<?php
-	} ?>
+	} elseif (isset($_SESSION["usuarioCRUD"])) { ?>
+		<div id="logueado">
+		<?php
+		echo "Hola: " . "<br>" . $_SESSION["usuarioCRUD"] . "<br><br>";
+		?>
+		<p><a href="http://localhost/proyecto/CRUD2.0/index.php"><i class="fas fa-sliders-h"></i> crud</a></p>
+		<p id="leave"><a href="cierre.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a></p>
+		</div>
+    <?php } ?>
 	</div>
 		
 

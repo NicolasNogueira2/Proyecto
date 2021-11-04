@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <title>CRUD </title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <!-- BOOTSTRAP 4 -->
    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
     <!-- FONT AWESOEM -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -14,8 +13,8 @@
   <body>
     <?php
     session_start();
-  if(!isset($_SESSION["usuario"])){
-    header("Location:login.php");
+  if(!isset($_SESSION["usuarioCRUD"])){ 
+    header("Location: http://localhost/proyecto/login/login.php");
   }
 
 ?>
@@ -58,7 +57,8 @@
          </style>
          
        </div>
-       <p><a href="cierre.php">Cerrar Sesion</a></p>
+       <a href="http://localhost/proyecto/home/home.php"><i class="fas fa-store"></i>Pagina Pricipal</a>
+       <a href="cierre.php">Cerrar Sesion</a>
       </div>
     </nav>
 

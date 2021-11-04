@@ -13,11 +13,4 @@ if(mysqli_connect_errno()){
   echo 'No se pudo conectar a la base de datos : '.mysqli_connect_error();
 }
 ?>
-<!-- 
-if (isset($con)){
-  echo 'DB is connected';        
-  }
-Comprueba la conexion
-se leeira 
-si existe (isset) esta conexion (%con) que muestre "DB is connected"
- -->
+

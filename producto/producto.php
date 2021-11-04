@@ -32,7 +32,7 @@ if  (isset($_GET['Codigo'])) {
 	<link rel="stylesheet" href="css\all.min.css">
 </head>
 <body>
-	<?php session_start(); ?>
+	<?php session_start() ?>
 	<div id="general">
 	<div id="main-header">
 	<!--<header id="main-header">-->
@@ -44,7 +44,7 @@ if  (isset($_GET['Codigo'])) {
 				<a class="search-btn" ><i class="fas fa-search"></i></a>
 			</form>
 			
-		</div>
+		</div>	
 
 			<ul>
 				<li><a href="http://localhost/proyecto/ubicacion/ubicacion.php"><i class="fas fa-map-marker-alt"></i></a></li>

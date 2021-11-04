@@ -10,7 +10,7 @@
 	try {
 		$base=new PDO("mysql:host=localhost; dbname=proyecto", "root", "");
 		$base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql="SELECT * FROM USUARIO WHERE Email= :login AND contra= :contra";
+		$sql="SELECT * FROM USUARIO WHERE Email= :login AND contra= :contra AND tipo_user= '2'";
 		$resultado=$base->prepare($sql);
 		$login=htmlentities(addslashes($_POST["login"]));
 		$contra=htmlentities(addslashes($_POST["contra"]));
@@ -23,8 +23,12 @@
 			$_SESSION["usuario"]=$_POST["login"];
 			header("Location: http://localhost/proyecto/home/home.php");
 
+
 		}else{	
-			header("Location:login.php");
+		$sql="SELECT * FROM USUARIO WHERE Email= :login AND contra= :contra AND tipo_user= '1'";
+				session_start();
+			$_SESSION["usuarioCRUD"]=$_POST["login"];
+			header("Location:http://localhost/proyecto/CRUD2.0/index.php");
 		}
 
 
