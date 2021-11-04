@@ -353,4 +353,78 @@ tbody tr td a i{
 	margin-left: 5px;
 	text-align: justify;
 }
+#prod .producto #loguearse{
+	padding: 30px;
+	background: #29B9d9;
+	font-family: Helvetica;
+	border-radius: 5px;
+	margin-bottom: 390px;
+	margin-left: 320px;
+
+}
+#prod .producto #loguearse li{
+	list-style: none;
+	color: white;
+	padding: 5px;
+	padding-bottom: 39px;
+}
+#prod .producto #loguearse li a{
+	color: #595959;
+	padding: 10px;
+	height: 50px;
+	background: white;
+	border-radius: 5px;
+	text-decoration: none; 
+}
+
+#prod-desc .producto .card{
+ 	background: #F8F7F7;
+ 	display: block;
+	width: 250px;
+	height: 300px;
+	border-radius: 5px;
+	box-shadow: 0 2px 2px #29B9d9;
+	overflow: hidden;
+	margin: 20px;
+	padding-top: 20px;
+	text-align: center;
+	transition: all 0.30s;
+
+
+}
+#prod-desc .producto .card .imagen{
+	border-radius: 5px;
+}
+#prod-desc .producto .card .letras .precio{
+	color: #f56200;
+	font-family: Helvetica;
+	font-style: ;
+	font-weight: bold;
+	}
+	#prod-desc .producto .card .letras .nombre{
+	font-family: Helvetica;
+	color: #666565;
+	margin-left: 5px;
+	padding-bottom: 5PX	;
+	font-weight: bold;
+	}
+	#prod-desc .producto .card .letras{
+		background: #E7E7E7;
+		margin-left: 14px;
+		margin-right: 14px;
+		border-radius: 	5px;
+	}
+#prod-desc .producto .card:hover{
+	transform: translate(-10px);
+	box-shadow: 0 6px 8px #4694A6;
+}
+	#prod-desc{
+	margin-right: auto;
+	width: 67%;
+	height: 350px;
+	float: left;
+	margin-top: -200px;
+
+
+}
 

@@ -1,7 +1,8 @@
  <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
+	
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0 ">
 	<title>Razer</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap">
@@ -10,6 +11,7 @@
 	
 </head>
 <body>
+	<?php session_start(); ?>
 	<div id="general">
 	<div id="main-header">
 	
@@ -126,6 +128,7 @@
 </div>
 </div>
 <div id="prod-desc">
+	
 	<div class="producto">
 
 			<?php

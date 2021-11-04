@@ -21,7 +21,7 @@
 		if($numero_registro!=0){
 			session_start();
 			$_SESSION["usuario"]=$_POST["login"];
-			header("Location: usuarios_registrados1.php");
+			header("Location: http://localhost/proyecto/home/home.php");
 
 		}else{	
 			header("Location:login.php");

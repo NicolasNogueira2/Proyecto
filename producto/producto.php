@@ -32,6 +32,7 @@ if  (isset($_GET['Codigo'])) {
 	<link rel="stylesheet" href="css\all.min.css">
 </head>
 <body>
+	<?php session_start(); ?>
 	<div id="general">
 	<div id="main-header">
 	<!--<header id="main-header">-->
@@ -145,7 +146,14 @@ if  (isset($_GET['Codigo'])) {
 			<header>Ingrese Cantidad</header>
 			<label for="btn-up"><i class="fas fa-times"></i></label> 
 			<div class="contenido">
-
+				<?php 
+				if(!isset($_SESSION["usuario"])){
+					?><div id="loguearse">
+			<li><p>¿No tienes una cuenta?</p></li>
+		<li><a href="http://localhost/proyecto/Login/login.php"><i class="fas fa-user-tie"></i></i> Iniciar sesion</a></li>
+		<li><a href="http://localhost/proyecto/Login/index.php"><i class="fas fa-user-alt"></i> Crear una cuenta</a></li> 
+		</div>
+			 <?php } else { ?>
 				<form method="post">
 					<input type="Int" name="cantidad" value="1" > <br>
 					
@@ -166,7 +174,7 @@ if  (isset($_GET['Codigo'])) {
   				$result = mysqli_query($con, $query);
   		}
   } 
-  ?>
+  } ?>
 			</div> 
 		</div>
 	</div>

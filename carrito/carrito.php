@@ -11,6 +11,7 @@
 	
 </head>
 <body>
+	<?php session_start(); ?>
 	<div id="general">
 	<div id="main-header">
 	
@@ -106,6 +107,51 @@
 <div id="prod">
 	
 	<div class="producto">
+		<?php
+
+
+	if(!isset($_SESSION["usuario"])){
+		?>
+		<div id="loguearse">
+			<li><p>¿No tienes una cuenta?</p></li>
+		<li><a href="http://localhost/proyecto/Login/login.php"><i class="fas fa-user-tie"></i></i> Iniciar sesion</a></li>
+		<li><a href="http://localhost/proyecto/Login/index.php"><i class="fas fa-user-alt"></i> Crear una cuenta</a></li> 
+		</div>
+		<div id="prod-desc">
+<div class="producto">
+
+			<?php
+			    include("db.php");
+			            $query = "SELECT * FROM producto WHERE destacado LIKE '%Destacado' and Stock > '0' and estado = 'activo' Order by Precio ASC" ;
+			            $resultado = $con->query($query);
+
+			            while ($row = $resultado->fetch_assoc()) {
+			                ?>
+
+			                <div class="card">
+			                <a  href="//localhost/proyecto/producto/producto.php?Codigo=<?php echo $row['codigo']?>" id="poducto">
+			                    <div class="imagen"><img height="220" width="220" border-radius="5px" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/>
+			                    </div>
+			                    <div class="letras">
+			                    <div class="precio">$<td><?php echo $row['Precio']; ?>	</td>
+			                    </div>
+			                    
+			                    <div class="nombre">
+			                    	<td><?php echo $row['Nombre']; ?></td>
+			                    </div>
+			                	</div>
+			                    
+
+			            </a>
+			                </div >
+
+
+			                <?php 
+			            }
+			     ?>
+</div>
+</div>
+	<?php } else { ?>
 		<div class="carrito">
 			<div id="title">
 				<p>Carrito</p>
@@ -174,10 +220,14 @@
 							<li>Total</li>
 							</div>
 		</div>
-</div>
-</div>
-	</div>
 
+</div>
+
+</div>
+<?php } ?>
+
+	</div>
+	
 </div>
 
 

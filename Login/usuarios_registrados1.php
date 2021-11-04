@@ -10,7 +10,7 @@
 
 	session_start();
 	if(!isset($_SESSION["usuario"])){
-		header("Location:login.php");
+		echo "no estas registrado";
 	}
 
 ?>	
@@ -20,7 +20,7 @@
 	echo "Hola: " . $_SESSION["usuario"] . "<br><br>";
 	?>
 
-	<p><a href="cierre.php">Cerrar Sesion</a></p>
+	
 	
 </body>
 </html>

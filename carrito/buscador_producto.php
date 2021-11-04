@@ -115,7 +115,7 @@
 			    if (empty($busqueda)) 
             {
                ?><div class="error">
-               <h1 id="error_busqueda">Tu búsqueda no obtuvo ningun resultados <i class="fas fa-sad-tear"></i></h1>
+               <h1 id="error_busqueda">Tu búsqueda no obtuvo ningun resultado <i class="fas fa-sad-tear"></i></h1>
                </div>
             <?php
             } else {

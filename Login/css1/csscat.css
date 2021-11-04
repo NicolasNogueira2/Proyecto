@@ -399,3 +399,21 @@ font-weight: bold;
 	margin-left: auto;
 	border-radius: 7px;
 }
+#prod #logueado{
+	background: #29B9d9;
+	margin-left: 290px;
+	margin-right: 290px;
+	padding-left: 50px ;	
+	padding-top: 10px;
+	font-family: Helvetica;
+	border-radius: 5px;
+	color: white;
+	padding-bottom: 1px;
+
+
+}
+#pro #logueado #leave a{
+	color: white;
+
+
+}

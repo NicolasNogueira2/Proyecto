@@ -8,6 +8,7 @@
 	<title>Login</title>
 </head>
 <body>
+	<?php session_start();  ?>
 	<div id="general">
 	<div id="main-header">
 	<!--<header id="main-header">-->
@@ -100,7 +101,10 @@
 	</div>
 </div>
 <div id="prod">
-	<form action="comprueba_login.php" method="post">
+	<?php 
+	if(!isset($_SESSION["usuario"])){
+		?>	
+		<form action="comprueba_login.php" method="post">
 		<p>INICIAR SESION</p>
 			<table>
 
@@ -115,6 +119,21 @@
 				</tr>
 			</table>
 	</form>
+	
+	<?php } else { 
+		?>
+		<div id="logueado">
+		<?php
+		echo "Hola: " . "<br>" . $_SESSION["usuario"] . "<br><br>";
+		?>
+		<p id="leave"><a href="cierre.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a></p>
+		</div>
+		<?php
+	} ?>
+	</div>
+		
+
+	
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="mainHeader.js"></script>

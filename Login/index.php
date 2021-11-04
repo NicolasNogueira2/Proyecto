@@ -33,20 +33,14 @@
 	<div class="contenedor-menu">
 		<ul class="menu">
 			<li class="titulo">CATEGORIAS</li>
-			<li><a href="#"><i class="icono izquierda	fas fa-keyboard"></i> Teclado <i class="icono derecha	fas fa-chevron-down"></i></a>
+		<li><a href="#"><i class="icono izquierda	fas fa-keyboard"></i> Teclado <i class="icono derecha	fas fa-chevron-down"></i></a>
 		<ul>
-			<li><a href="http://localhost/proyecto/home/catsel/catselTecR.php">Razer</a></li>
-			<li><a href="catsel/catselTecL.html">Logitech</a></li>
-			<li><a href="catsel/catselTecH.html">HyperX</a></li>
-		</ul>
-		</li>
-		<li><a href="#"><i class="icono izquierda	fas fa-mouse"></i> Mouse  <i class="icono derecha	fas fa-chevron-down"></i></a>
-			<ul>
 				<li><a href="http://localhost/proyecto/home/catsel/catselTecR.php">Razer</a></li>
 				<li><a href="http://localhost/proyecto/home/catsel/catselTecL.php">Logitech</a></li>
 				<li><a href="http://localhost/proyecto/home/catsel/catselTecH.php">HyperX</a></li>
-			</ul>
+		</ul>
 		</li>
+		
 		<li><a href="#"><i class="icono izquierda	fas fa-mouse"></i> Mouse  <i class="icono derecha	fas fa-chevron-down"></i></a>
 			<ul>
 
