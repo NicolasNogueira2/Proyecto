@@ -19,10 +19,17 @@
 		$resultado->execute();
 		$numero_registro=$resultado->rowCount();
 		if($numero_registro!=0){
+			if ($login=='admin@gmail.com') {
+			session_start();
+			$_SESSION["usuarioCRUD"]=$_POST["login"];
+			header("Location: http://localhost/proyecto/home/home.php");
+			}else{
 			session_start();
 			$_SESSION["usuario"]=$_POST["login"];
 			header("Location: http://localhost/proyecto/home/home.php");
+			}
 
+		
 
 		}else{	
 		header("Location: http://localhost/proyecto/login/login.php");
