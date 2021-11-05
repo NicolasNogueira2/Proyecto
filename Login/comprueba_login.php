@@ -22,7 +22,7 @@
 			if ($login=='admin@gmail.com') {
 			session_start();
 			$_SESSION["usuarioCRUD"]=$_POST["login"];
-			header("Location: http://localhost/proyecto/home/home.php");
+			header("Location: http://localhost/proyecto/CRUD2.0/index.php");
 			}else{
 			session_start();
 			$_SESSION["usuario"]=$_POST["login"];

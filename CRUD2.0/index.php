@@ -13,7 +13,7 @@
   <body>
     <?php
     session_start();
-  if(!isset($_SESSION["usuario"])){ 
+  if(!isset($_SESSION["usuarioCRUD"])){ 
     header("Location: http://localhost/proyecto/login/login.php");
   }
 
@@ -157,7 +157,20 @@
               <a href="edit.php?Codigo=<?php echo $row['codigo']?>" class="btn btn-secondary">
                 <i class="fas fa-marker"></i>
               </a>
-                <a href="delete_producto.php?Codigo=<?php echo $row['codigo']?>" class="btn btn-danger">
+              <script type="text/javascript">
+
+               function ConfirmDelete() {
+                   var respuesta = confirm("¿Estas seguro que quieres borrar este producto?");
+
+                    if (respuesta == true) {
+                     return true
+                    }
+                    else {
+                     return false;
+                    }
+                  }
+</script>
+                <a href="delete_producto.php?Codigo=<?php echo $row['codigo']?>" class="btn btn-danger"  onclick="return ConfirmDelete()">
                   <i class="far fa-trash-alt"></i>
                 </a>
             </td>

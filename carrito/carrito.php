@@ -110,7 +110,7 @@
 		<?php
 
 
-	if(!isset($_SESSION["usuario"])){
+	if(!isset($_SESSION["usuario"]) and !isset($_SESSION["usuarioCRUD"])){
 		?>
 		<div id="loguearse">
 			<li><p>¿No tienes una cuenta?</p></li>
@@ -151,7 +151,7 @@
 			     ?>
 </div>
 </div>
-	<?php } else { ?>
+	<?php } elseif(isset($_SESSION["usuario"])) { ?>
 		<div class="carrito">
 			<div id="title">
 				<p>Carrito</p>
@@ -175,6 +175,85 @@
           
         <?php
         $query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuario]'";
+  			$result = mysqli_query($con, $query);
+  			if (mysqli_num_rows($result) == 1) {
+  				$row = mysqli_fetch_array($result);
+    			$ci = $row['CI'];	
+  			}	
+          $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
+          while($row = mysqli_fetch_assoc($consulta)) { ?>
+          <tr>
+            
+            <td><img height="50px" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/></td>
+            <td><?php echo $row['Nombre']; ?></td>
+            <td>$<?php echo $row['Precio']; ?></td>
+            <td><?php echo $row['cantidad']; ?></td>
+            <td>$<?php echo $row['subTotal']; ?></td>
+            <td>
+            <a href="delete_producto.php?Codigo=<?php echo $row['Codigo']?>" class="btn btn-danger">
+                  <i class="far fa-trash-alt"></i>
+            </a>
+            </td>
+          </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+
+			</div>
+		</div>
+			<div id="TotalCarrito">
+			<div id="contenido">
+						<div id="Sub1">
+							<li></li>
+						</div>
+						<div id="Envio1">
+							<input type="checkbox" name="" id="uno"> Retirar en el local<br>
+							<input type="checkbox" name="" id="dos"> Montevideo: US$7.00 <br>
+							<input type="checkbox" name="" id="tres"> Interior: US$10.00 <br> 	
+							<input type="checkbox" name="" id="cuatro"> Canelones: US$3.00 <br> 	
+						</div>
+						<div id="Total1">
+							<li>1</li>
+						</div>
+		<div id="contenido2">	
+							<div id="Sub">
+							<li>Subtotal</li>
+							</div>
+							<div id="Envio">
+							<li>Envio</li>
+							</div>
+							<div id="Total">
+							<li>Total</li>
+							</div>
+		</div>
+
+</div>
+
+</div>
+<?php }elseif (isset($_SESSION["usuarioCRUD"])) { ?>
+		<div class="carrito">
+			<div id="title">
+				<p>Carrito</p>
+			</div>
+			<div id="content">
+		<table class="table table-bordered">
+        <thead>
+          <tr>
+          	<th></th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th></th>
+            <th></th>
+
+            
+          </tr>
+        </thead>
+        <tbody>
+          
+        <?php
+        $query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuarioCRUD]'";
   			$result = mysqli_query($con, $query);
   			if (mysqli_num_rows($result) == 1) {
   				$row = mysqli_fetch_array($result);
