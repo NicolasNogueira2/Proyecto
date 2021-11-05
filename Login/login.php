@@ -108,12 +108,20 @@
 		<p>INICIAR SESION</p>
 			<table>
 
-					<tr><td class="izq"></td><td class="der"><i class="fas fa-user-alt"></i> 
-						<input class="entrada" type="text" name="login" placeholder="Email"></td></tr>
+					<tr><td class="izq"></td><td class="der"><i class="fas fa-user-alt"></i>
+
+						<input class="entrada" type="text" name="login" placeholder="Email">
+
+					</td></tr>
 					<tr><td class="izq"></td><td class="der"><i class="fas fa-key"></i>
-						<input class="entrada" type="password" name="contra" placeholder="Contraseña"></td></tr>
+
+						<input class="entrada" type="password" name="contra" placeholder="Contraseña">
+
+					</td></tr>
 					<tr><td colspan="2">
-						<input class="btn_submit" type="submit" name="enviar" value="Iniciar sesion"></td>
+
+						<input class="btn_submit" type="submit" name="comprueba_login" value="Iniciar sesion">
+					</td>
 					<tr><td colspan="2"><a href="http://localhost/proyecto/Login/index.php">
 						<input class="btn_submit" type="button" name="registrarse" value="Registrarse"></a></td>
 				</tr>

@@ -1,4 +1,4 @@
- <?php
+	 <?php
 include("db.php");
 
 $Nombre = '';
@@ -147,7 +147,7 @@ if  (isset($_GET['Codigo'])) {
 			<label for="btn-up"><i class="fas fa-times"></i></label> 
 			<div class="contenido">
 				<?php 
-				if(!isset($_SESSION["usuario"])){
+				if(!isset($_SESSION["usuario"]) and !isset($_SESSION["usuarioCRUD"])){
 					?><div id="loguearse">
 			<li><p>¿No tienes una cuenta?</p></li>
 		<li><a href="http://localhost/proyecto/Login/login.php"><i class="fas fa-user-tie"></i></i> Iniciar sesion</a></li>
@@ -163,14 +163,21 @@ if  (isset($_GET['Codigo'])) {
 			</div>
 			<?php
 			include("db.php");
+
 			if (isset($_POST['addcarrito'])) {
+				$query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuario]'";
+  			$result = mysqli_query($con, $query);
+  			if (mysqli_num_rows($result) == 1) {
+  				$row = mysqli_fetch_array($result);
+    			$ci = $row['CI'];	
+  			}	
 				  $nroFactura = $_POST['nroFactura'];
   				$cantidad = $_POST['cantidad'];
   				$subTotal = $Precio*$cantidad;
   				if ($cantidad>='1') {
-  
   			
-  				$query = "INSERT INTO listaproducto (Codigo, nroFactura , cantidad, subTotal) VALUES ('$id', '$nroFactura' , '$cantidad', '$subTotal')";
+  			
+  				$query = "INSERT INTO listaproducto (Codigo, nroFactura , cantidad, subTotal, CI) VALUES ('$id', '$nroFactura' , '$cantidad', '$subTotal', '$ci')";
   				$result = mysqli_query($con, $query);
   		}
   } 

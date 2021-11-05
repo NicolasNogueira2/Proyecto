@@ -13,7 +13,7 @@
   <body>
     <?php
     session_start();
-  if(!isset($_SESSION["usuarioCRUD"])){ 
+  if(!isset($_SESSION["usuario"])){ 
     header("Location: http://localhost/proyecto/login/login.php");
   }
 

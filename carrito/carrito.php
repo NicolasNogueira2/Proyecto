@@ -174,7 +174,13 @@
         <tbody>
           
         <?php
-          $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo"); 
+        $query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuario]'";
+  			$result = mysqli_query($con, $query);
+  			if (mysqli_num_rows($result) == 1) {
+  				$row = mysqli_fetch_array($result);
+    			$ci = $row['CI'];	
+  			}	
+          $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
           while($row = mysqli_fetch_assoc($consulta)) { ?>
           <tr>
             

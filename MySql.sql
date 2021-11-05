@@ -45,8 +45,10 @@
 	nroFactura int(50) auto_increment,
 	cantidad int (5),
 	subTotal int(10),
+	CI int(15),
 	primary key (nroFactura),
-	Foreign key (Codigo) references Producto (Codigo)
+	Foreign key (Codigo) references Producto (Codigo),
+	Foreign key (CI) references usuario (CI)
 	);
 
 	Create table Factura(
