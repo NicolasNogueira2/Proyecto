@@ -1,4 +1,9 @@
-
+body{
+	height: 100%;
+	background-image: url("../imagenes/49071572.jpg");
+	background-repeat:no-repeat ;
+	background-size: 150%;
+}
 a{
 	text-decoration: none;
 	color: black;
@@ -307,77 +312,77 @@ font-weight: bold;
 /* LOGIN */
 
 
-#prod{
+#prod {
+	margin-left: 100px;
 	margin-right: auto;
-	width: 67%;
-	height: 566px;
-	float: left;
-	margin-top: 50px;
-	margin-left: 110px;
+	
 }
- #prod form{
- 	width: 230px;
- 	border: 3px solid #29B9d9;
-	margin-right : auto ;
+#prod form{
 	margin-left: auto;
- 	padding: 50px;
- 	text-align: center; /*Se alinea el texto en este caso al centro*/
- 	background: white;
- 	border-radius: 7px;
- 	color: #29B9d9;
- }	
- form .titulo{
- 	font-size: 23px;
- 	border-bottom:1px solid #29B9d9;
- }
- label{
- 	font-size: 12px;	
- }
- #prod input{
- 	font-family: Arial ;
- 	padding: 10px;
- 	width: 80%;
- 	background: white;
- 	border: white;
- 	border-bottom:1px solid #29B9d9;
- 	
- }
+	margin-right: auto;
+	width: 250px;
+	text-align: center;
+	background: #29B9d9;
+	border-radius: 5px;
+	padding: 30px;
 
- input:focus{ 
- 	outline: none;
-
- }
-#prod input[type="Submit"]{ /*modifico el submit especificamente*/
-	padding: 5px;
+}
+#prod p{
 	color: white;
-	border: none; /*porque el borde default de la compu era como sombreado*/
+	font-family: Arial;
+	font-size: 20px;
+	margin-top: 5px;
+}
+#prod input {
+	border-style: none;
+	margin-left: 7px;
+}
+input:focus {
+	outline: none;
+}
+#prod i{
+	color: #595959;
 	font-size: 15px;
-	border-radius: 6px; /* borde redondo */
-	background: #29B9d9;
-	margin-top: 30px;
-	background: #29B9d9;
 }
-#prod input[type="Submit"]:hover{ /*HOVER: comportamiento cuando el cursor cuadno pasa por el boton*/
-	background: #4694A6; /*cambiar el color cuando pasa por el boton*/
-	cursor: pointer; /*cambia a manito cuando pasas por el boton*/
-
+.arriba, .abajo {
+	background: white;
+	padding: 10px;
+	border-radius: 5px;
 }
-#prod input[type="button"]{ /*modifico el button especificamente*/
-	padding: 5px;
+#prod .btn_submit{ 
+	background: white;
+	margin-top: 50px;
+	font-size: 15px;
+	border: 2px solid #4694A6;
+	border-radius: 5px;
+	color: #595959;
+	padding: 10px;
+	display: inline-block;
+	font-family: Arial ;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+#prod .btn_submit:hover{ 
+	border: 1px solid white;
+	border-radius: 5px;
 	color: white;
-	border: none; /*porque el borde default de la compu era como sombreado*/
+	padding: 10px;
+	background: #595959;
+	cursor: pointer;
+	font-family: Arial ;
 	font-size: 15px;
-	border-radius: 6px; /* borde redondo */
-	background: #29B9d9;
-	margin-top: 15px;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
-#prod input[type="button"]:hover{ /*HOVER: comportamiento cuando el cursor cuadno pasa por el boton*/
-	background: #4694A6; /*cambiar el color cuando pasa por el boton*/
-	cursor: pointer; /*cambia a manito cuando pasas por el boton*/
+tr{
+	display: inline-block;
 }
-#prod input[type="radio"]{
-	text-align: left;
-	padding: 100px;
+.abajo{
+	margin: 10px;
+}
+#prod form .tdemail{
+	margin-top: 20px;
+}
+#prod form .tdcontra{
+	margin-top: 10px;
 }
 .ok{
  	text-align: center;
@@ -412,8 +417,52 @@ font-weight: bold;
 
 
 }
-#pro #logueado #leave a{
+#prod #logueado #leave a{
 	color: white;
+}
+.arriba td {
+	width: 100px;
+}
+.ok{
+ 	text-align: center;
+ 	width: 23%;
+ 	padding: 12px;
+ 	background-color: #29B9d9;
+ 	color: #FFF;
+	margin-right : auto ;
+	margin-left: auto;
+	border-radius: 7px;
+}
+.bad {
+	text-align: center;
+ 	width: 23%;
+ 	padding: 12px;
+ 	background-color: red;
+ 	color: #FFF;
+	margin-right : auto ;
+	margin-left: auto;
+	border-radius: 7px;
+}
+#prod #logueado{
+	background: #29B9d9;
+	margin-left: 290px;
+	margin-right: 290px;
+	padding-left: 50px ;	
+	padding-top: 10px;
+	font-family: Helvetica;
+	border-radius: 5px;
+	color: white;
+	padding-bottom: 1px;
 
 
 }
+#prod #logueado #leave a{
+	color: white;
+}
+.arriba td {
+	width: 100px;
+}
+#prod header{
+	border-bottom: 1px solid white;
+}
+

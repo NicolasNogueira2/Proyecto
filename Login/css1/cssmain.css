@@ -1,3 +1,9 @@
+body{
+	height: 100%;
+	background-image: url("../imagenes/49071572.jpg");
+	background-repeat:no-repeat ;
+	background-size: 150%;
+}
 a{
 	text-decoration: none;
 	color: #FFFFFF;
@@ -266,4 +272,184 @@ input[type="button"]:hover{ /*HOVER: comportamiento cuando el cursor cuadno pasa
 input[type="radio"]{
 	text-align: left;
 	padding: 100px;	
+}
+
+/*Register*/
+#prod {
+	margin-left: 100px;
+	margin-right: auto;
+	
+}
+#prod form{
+	margin-left: auto;
+	margin-right: auto;
+	width: 250px;
+	text-align: center;
+	background: #29B9d9;
+	border-radius: 5px;
+	padding: 30px;
+	height: 50%;
+
+}
+#prod p{
+	color: white;
+	font-family: Arial;
+	font-size: 20px;
+	margin-top: 5px;
+}
+#prod input {
+	border-style: none;
+	margin-left: 7px;
+}
+input:focus {
+	outline: none;
+}
+#prod i{
+	color: #595959;
+	font-size: 15px;
+}
+
+#prod .btn_submit{ 
+	background: white;
+	font-size: 12px;
+	border: 2px solid #4694A6;
+	border-radius: 5px;
+	color: #595959;
+	padding: 10px;
+	display: inline-block;
+	position: static;
+	font-family: Arial ;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	width: 100px;
+}
+#prod .btn_submit:hover{ 
+	border: 1px solid white;
+	border-radius: 5px;
+	color: white;
+	padding: 10px;
+	background: #595959;
+	cursor: pointer;
+	font-family: Arial ;
+	font-size: 12px;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.abajo{
+	margin: 10px;
+}
+#prod form .tdemail{
+	margin-top: 20px;
+}
+#prod form .tdcontra{
+	margin-top: 10px;
+}
+.ok{
+ 	text-align: center;
+ 	width: 23%;
+ 	padding: 12px;
+ 	background-color: #29B9d9;
+ 	color: #FFF;
+	margin-right : auto ;
+	margin-left: auto;
+	border-radius: 7px;
+}
+.bad {
+	text-align: center;
+ 	width: 23%;
+ 	padding: 12px;
+ 	background-color: red;
+ 	color: #FFF;
+	margin-right : auto ;
+	margin-left: auto;
+	border-radius: 7px;
+}
+#prod #logueado{
+	background: #29B9d9;
+	margin-left: 290px;
+	margin-right: 290px;
+	padding-left: 50px ;	
+	padding-top: 10px;
+	font-family: Helvetica;
+	border-radius: 5px;
+	color: white;
+	padding-bottom: 1px;
+
+
+}
+#prod #logueado #leave a{
+	color: white;
+}
+.arriba td {
+	width: 100px;
+}
+.ok{
+ 	text-align: center;
+ 	width: 23%;
+ 	padding: 12px;
+ 	background-color: #29B9d9;
+ 	color: #FFF;
+	margin-right : auto ;
+	margin-left: auto;
+	border-radius: 7px;
+}
+.bad {
+	text-align: center;
+ 	width: 23%;
+ 	padding: 12px;
+ 	background-color: red;
+ 	color: #FFF;
+	margin-right : auto ;
+	margin-left: auto;
+	border-radius: 7px;
+}
+#prod #logueado{
+	background: #29B9d9;
+	margin-left: 290px;
+	margin-right: 290px;
+	padding-left: 50px ;	
+	padding-top: 10px;
+	font-family: Helvetica;
+	border-radius: 5px;
+	color: white;
+	padding-bottom: 1px;
+
+
+}
+#prod #logueado #leave a{
+	color: white;
+}
+.arriba td {
+	width: 100px;
+}
+#prod header{
+	border-bottom: 1px solid white;
+}
+input{
+	margin-top: 10px;
+	margin-top: 0;
+	width: 130px;
+}
+#arriba, #medio, #abajo{
+	border: 1px solid white;
+	border-radius: 5px;
+	background: white;
+	margin-top: 10px;
+	width: 200px;
+	margin-left: 25px;
+}
+#prod p{
+	border-bottom: 1px solid white;
+	padding-bottom: 25px;
+}
+#prod #izquierda1{
+	width: 110px;
+	position: fixed;
+	margin-top: 10px;
+	margin-left: 15px;
+}
+#prod #derecha1{
+	margin-top: 25px;
+	width: 110px;
+	position: fixed;
+	margin-left: 120px;
 }

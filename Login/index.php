@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap">
 	<title>REGISTRARSE</title>
-	<link rel="stylesheet" href="css1\csscat.css">
+	<link rel="stylesheet" href="css1\cssmain.css">
 	<link rel="stylesheet" href="css\all.min.css">
 <body>
 	<div id="general">
@@ -102,31 +102,24 @@
 <div id="prod">
 	<form  method="post">
 		<p class="titulo">REGISTRARSE</p>
-<p>
+
+		<div id="arriba">
+		<tr class="tdemail"><td class="izq"></td><td class="arriba"><label for="ced"><i class="fas fa-address-card"></i></label>
+		<input type="number" placeholder="Cedula" name="cedula" id="ced"><br></td></tr>
+		</div>
+
+		<div id="medio">
+		<tr class="tdemail"><td class="izq"></td><td class="arriba"><label for="emai" class="em"><i class="fas fa-envelope"></i></label>
+		<input type="email" placeholder="Email" name="email" id="emai"><br></td></tr>	
+		</div>
+	    <div id="abajo">
+		<tr class="tdemail"><td class="izq"></td><td class="arriba"><label for="cont"><i class="fas fa-key"></i></label>
+		<input type="password" id="contra" placeholder="Contraseña" name="contra" id="cont"><br></td></tr>		
+	    </div>
 	
-	<label for="">
-		<i class="fas fa-address-card"></i><input type="number" placeholder="Cedula" name="cedula"><br>
-	</label>
-
-	<label for="">
-		<i class="fas fa-envelope"></i><input type="email" placeholder="Email" name="email"><br>
-	</label>
-
-	<label for="">
-		<i class="fas fa-key"></i><input type="password" id="contra" placeholder="Contraseña" name="contra">
-	</label>
-
-	</fieldset> 
-</p>
-
-
-
-<p>
-	<label for="">
-		<input class="btn_submit" type="Submit" value="Registrarse" name="enviar"><br>
-	</label>
-	<label for=""><a href="http://localhost/proyecto/Login/login.php"><input class="btn_submit" type="button" name="login" value="Iniciar Sesion"></a></td></label>
-</p>
+	
+	   <div id="izquierda1"><input class="btn_submit" type="Submit" value="Registrarse" name="enviar"><br></div>
+	   <div id="derecha1"><a href="http://localhost/proyecto/Login/login.php"><input class="btn_submit" type="button" name="login" value="Iniciar Sesion"></a></div>
 
 	</form>
 	<?php

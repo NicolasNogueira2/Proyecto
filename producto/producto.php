@@ -155,7 +155,7 @@ if  (isset($_GET['Codigo'])) {
 		</div>
 			 <?php } else { ?>
 				<form method="post">
-					<input type="Int" name="cantidad" value="1" > <br>
+					<input type="number" name="cantidad" value="1" > <br>
 					
 			<div class="fot">
 				<input type="submit" name="addcarrito" value="Enviar al carrito" class="btn_submit">
@@ -165,7 +165,7 @@ if  (isset($_GET['Codigo'])) {
 			include("db.php");
 
 			if (isset($_POST['addcarrito'])) {
-				$query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuario]'";
+				$query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuario]' or Email = '$_SESSION[usuarioCRUD]'";
   			$result = mysqli_query($con, $query);
   			if (mysqli_num_rows($result) == 1) {
   				$row = mysqli_fetch_array($result);

@@ -1,5 +1,8 @@
 body, html{
 	height: 100%;
+	background-image: url("../imagenes/49071572.jpg");
+	background-repeat:no-repeat ;
+	background-size: 150%;
 }
 a{
 	text-decoration: none;

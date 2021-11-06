@@ -105,23 +105,15 @@
 	if(!isset($_SESSION["usuario"]) and !isset($_SESSION["usuarioCRUD"])){
 		?>	
 		<form action="comprueba_login.php" method="post">
-		<p>INICIAR SESION</p>
+		<header><label for="user"><p>INICIAR SESION</p></label></header>		
 			<table>
 
-					<tr><td class="izq"></td><td class="der"><i class="fas fa-user-alt"></i>
-
-						<input class="entrada" type="text" name="login" placeholder="Email">
-
-					</td></tr>
-					<tr><td class="izq"></td><td class="der"><i class="fas fa-key"></i>
-
-						<input class="entrada" type="password" name="contra" placeholder="Contraseña">
-
-					</td></tr>
+					<tr class="tdemail"><td class="izq"></td><td class="arriba"><label for="user"><i class="fas fa-user-alt"></i></label>
+						<input class="entrada" type="text" name="login" placeholder="Email" id="user"></td></tr>
+					<tr class="tdcontra"><td class="izq"></td><td class="abajo"><label for="con"><i class="fas fa-key"></label></i>
+						<input class="entrada" type="password" name="contra" placeholder="Contraseña" id="con"></td></tr>
 					<tr><td colspan="2">
-
-						<input class="btn_submit" type="submit" name="comprueba_login" value="Iniciar sesion">
-					</td>
+						<input class="btn_submit" type="submit" name="enviar" value="Iniciar sesion"></td>
 					<tr><td colspan="2"><a href="http://localhost/proyecto/Login/index.php">
 						<input class="btn_submit" type="button" name="registrarse" value="Registrarse"></a></td>
 				</tr>
