@@ -404,65 +404,67 @@ tr{
 	margin-left: auto;
 	border-radius: 7px;
 }
-#prod #logueado{
+#prod #logueado {
 	background: #29B9d9;
-	margin-left: 290px;
-	margin-right: 290px;
-	padding-left: 50px ;	
-	padding-top: 10px;
-	font-family: Helvetica;
+	width: 300px;
+	height: 250px;
+	border: 2px solid #4694A6;
 	border-radius: 5px;
 	color: white;
-	padding-bottom: 1px;
-
-
-}
-#prod #logueado #leave a{
-	color: white;
-}
-.arriba td {
-	width: 100px;
-}
-.ok{
- 	text-align: center;
- 	width: 23%;
- 	padding: 12px;
- 	background-color: #29B9d9;
- 	color: #FFF;
-	margin-right : auto ;
 	margin-left: auto;
-	border-radius: 7px;
+	margin-right: auto;
+	box-shadow: 7px 7px 7px 3px rgba(0, 0, 0, 0.2);
 }
-.bad {
-	text-align: center;
- 	width: 23%;
- 	padding: 12px;
- 	background-color: red;
- 	color: #FFF;
-	margin-right : auto ;
-	margin-left: auto;
-	border-radius: 7px;
+#prod #logueado #contenido4{
+	padding: 40px;
+	font-size: 20px;
 }
-#prod #logueado{
-	background: #29B9d9;
-	margin-left: 290px;
-	margin-right: 290px;
-	padding-left: 50px ;	
-	padding-top: 10px;
-	font-family: Helvetica;
+#prod #logueado a {
+	color: #595959;
+	padding-left: 10px;
+	width: 100%;
+}
+#prod #logueado a i{
+	color: #595959;
+	padding-left: 5px;
+	font-size: 17px;
+	padding-right: 7px;
+}
+#prod #logueado a #iCrud{
+	color: #595959;
+	padding-left: 5px;
+	font-size: 17px;
+	width: 25%;
+}
+#prod #logueado #arriba1{
+	margin-top: 20px;
+	margin-left: 20px;
+	width: 160px;
+	border: 2px solid #4694A6;
 	border-radius: 5px;
-	color: white;
-	padding-bottom: 1px;
+	background: white;
+	padding: 5px;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#prod #logueado #abajo1{
+	margin-left: 20px;
+	width: 160px;
+	border: 2px solid #4694A6;
+	border-radius: 5px;
+	background: white;
+	padding: 5px;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#prod #logueado #arriba1 :hover{
+	cursor: pointer;
+}
+
+#prod #logueado #abajo1 :hover{
+	cursor: pointer;
+}
 
 
-}
-#prod #logueado #leave a{
-	color: white;
-}
-.arriba td {
-	width: 100px;
-}
-#prod header{
-	border-bottom: 1px solid white;
-}
+
 

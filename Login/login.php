@@ -123,20 +123,22 @@
 	<?php } elseif (isset($_SESSION["usuario"])){
 		?>
 		<div id="logueado">
-		<?php
-		echo "Hola: " . "<br>" . $_SESSION["usuario"] . "<br><br>";
-		?>
-		<p id="leave"><a href="cierre.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a></p>
+			<div id="contenido4">
+		<header><?php echo "Hola: " . "<br>" . $_SESSION["usuario"] . "<br><br>";?></header>
+		<p id="leave"><a href="cierre.php"><i class="fas fa-sign-out-alt"></i> <h1>Cerrar Sesion</h1></a></p>
 		</div>
+			</div>	
 		<?php
 	} elseif (isset($_SESSION["usuarioCRUD"])) { ?>
 		<div id="logueado">
+			<div id="contenido4">
 		<?php
 		echo "Hola: " . "<br>" . $_SESSION["usuarioCRUD"] . "<br><br>";
 		?>
-		<p><a href="http://localhost/proyecto/CRUD2.0/index.php"><i class="fas fa-sliders-h"></i> crud</a></p>
-		<p id="leave"><a href="cierre.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a></p>
+		<div id="arriba1"><a href="http://localhost/proyecto/CRUD2.0/index.php"><i class="fas fa-sliders-h" id="iCrud"></i>CRUD</a></div><br>
+		<div id="abajo1"><a href="cierre.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a></div>
 		</div>
+			</div>
     <?php } ?>
 	</div>
 		
