@@ -165,7 +165,7 @@ if  (isset($_GET['Codigo'])) {
 			include("db.php");
 
 			if (isset($_POST['addcarrito'])) {
-				$query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuario]'";
+				$query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuario]' or Email = '$_SESSION[usuarioCRUD]'";
   			$result = mysqli_query($con, $query);
   			if (mysqli_num_rows($result) == 1) {
   				$row = mysqli_fetch_array($result);

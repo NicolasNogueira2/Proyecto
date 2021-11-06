@@ -113,12 +113,12 @@
 	<div class="producto">
 		<ul class="slider">
 		<li>
-			<input type="radio" id="radio1" name="sradio" checked> <!-- checked para que siempre que cargue la pagina este se encuentre seleccionado -->
+			<input type="radio" id="radio1" name="sradio" checked> 
 			<label for="radio1"></label>
 			<img src="catsel/imagenes/Logitech.jpg" alt=""> 
 		</li>
 		
-			<input type="radio" id="radio2" name="sradio"> <!-- value todos iguales para poder definir que los radios botton no se seleccionen todos, las carcteristicas de estos es que se debe seleccionar una única opción, por lo tanto todos deben tener el mismo valor -->
+			<input type="radio" id="radio2" name="sradio"> 
 			<label for="radio2"></label>
 			<img src="catsel/imagenes/Homework.png" alt="">
 		</li>
