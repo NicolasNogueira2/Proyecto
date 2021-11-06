@@ -203,28 +203,28 @@
 		</div>
 			<div id="TotalCarrito">
 			<div id="contenido">
+				<?php 
+							
+							$total = 0;
+
+        $query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuario]'";
+  			$result = mysqli_query($con, $query);
+  			if (mysqli_num_rows($result) == 1) {
+  				$row = mysqli_fetch_array($result);
+    			$ci = $row['CI'];	
+  			}	
+          $consulta = $con->query("SELECT sum(subtotal) as total FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
+          while($row = mysqli_fetch_assoc($consulta)) { 
+          	$total = $row['total'];
+          } ?>
 						<div id="Sub1">
-							<li></li>
+							<li><?php echo $total; ?></li>	
 						</div>
-						<div id="Envio1">
-							<input type="checkbox" name="" id="uno"> Retirar en el local<br>
-							<input type="checkbox" name="" id="dos"> Montevideo: US$7.00 <br>
-							<input type="checkbox" name="" id="tres"> Interior: US$10.00 <br> 	
-							<input type="checkbox" name="" id="cuatro"> Canelones: US$3.00 <br> 	
-						</div>
-						<div id="Total1">
-							<li>1</li>
-						</div>
-		<div id="contenido2">	
+						
 							<div id="Sub">
 							<li>Subtotal</li>
 							</div>
-							<div id="Envio">
-							<li>Envio</li>
-							</div>
-							<div id="Total">
-							<li>Total</li>
-							</div>
+							
 		</div>
 
 </div>
@@ -265,9 +265,9 @@
             
             <td><img height="50px" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/></td>
             <td><?php echo $row['Nombre']; ?></td>
-            <td>$<?php echo $row['Precio']; ?></td>
+            <td>US$<?php echo $row['Precio']; ?></td>
             <td><?php echo $row['cantidad']; ?></td>
-            <td>$<?php echo $row['subTotal']; ?></td>
+            <td>US$<?php echo $row['subTotal']; ?></td>
             <td>
             <a href="delete_producto.php?Codigo=<?php echo $row['Codigo']?>" class="btn btn-danger">
                   <i class="far fa-trash-alt"></i>
@@ -282,32 +282,34 @@
 		</div>
 			<div id="TotalCarrito">
 			<div id="contenido">
+				<?php 
+							$total1 = 0;
+
+        $query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuarioCRUD]'";
+  			$result = mysqli_query($con, $query);
+  			if (mysqli_num_rows($result) == 1) {
+  				$row = mysqli_fetch_array($result);
+    			$ci = $row['CI'];	
+  			}	
+          $consulta = $con->query("SELECT sum(subtotal) as total1 FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
+          while($row = mysqli_fetch_assoc($consulta)) { 
+          	$total1 = $row['total1'];
+          } ?>
 						<div id="Sub1">
-							<li></li>
+							<li>US$<?php echo $total1; ?></li>	
 						</div>
-						<div id="Envio1">
-							<input type="checkbox" name="" id="uno"> Retirar en el local<br>
-							<input type="checkbox" name="" id="dos"> Montevideo: US$7.00 <br>
-							<input type="checkbox" name="" id="tres"> Interior: US$10.00 <br> 	
-							<input type="checkbox" name="" id="cuatro"> Canelones: US$3.00 <br> 	
-						</div>
-						<div id="Total1">
-							<li>1</li>
-						</div>
-		<div id="contenido2">	
-							<div id="Sub">
+						<div id="contenido2">
+						<div id="Sub">
 							<li>Subtotal</li>
-							</div>
-							<div id="Envio">
-							<li>Envio</li>
-							</div>
-							<div id="Total">
-							<li>Total</li>
-							</div>
-		</div>
+						</div>
+						
+						
+		
 
 </div>
-
+						<div id="continuar_compra">
+							<p><a href="">Continuar Compra</a></p>
+						</div>
 </div>
 <?php } ?>
 

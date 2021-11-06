@@ -26,10 +26,7 @@
 	Departameto varchar(50),
 	Ciudad varchar(50),
 	Calle Varchar(50),
-	numero int (10),
-	numTar varchar (50),
-	contraTar int (10),
-	fechaTar varchar(10),
+	rut int(20),
 	foreign key (CI) references Usuario (CI)
 	);
 
