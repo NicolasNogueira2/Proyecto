@@ -1,3 +1,4 @@
+
  <!DOCTYPE html>
  <?php include("db.php"); ?>
 <html lang="es">
@@ -178,17 +179,17 @@
   			$result = mysqli_query($con, $query);
   			if (mysqli_num_rows($result) == 1) {
   				$row = mysqli_fetch_array($result);
-    			$ci = $row['CI'];	
+    			$ci = $row['CI'];
   			}	
           $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
           while($row = mysqli_fetch_assoc($consulta)) { ?>
           <tr>
             
-            <td><img height="50px" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/></td>
+            <td><img height="70px" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/></td>
             <td><?php echo $row['Nombre']; ?></td>
-            <td>$<?php echo $row['Precio']; ?></td>
+            <td>US$<?php echo $row['Precio']; ?></td>
             <td><?php echo $row['cantidad']; ?></td>
-            <td>$<?php echo $row['subTotal']; ?></td>
+            <td>US$<?php echo $row['subTotal']; ?></td>
             <td>
             <a href="delete_producto.php?Codigo=<?php echo $row['Codigo']?>" class="btn btn-danger">
                   <i class="far fa-trash-alt"></i>
@@ -218,17 +219,19 @@
           	$total = $row['total'];
           } ?>
 						<div id="Sub1">
-							<li><?php echo $total; ?></li>	
+							<li>US$<?php echo $total; ?></li>	
 						</div>
-						
+						<div id="contenido2">	
 							<div id="Sub">
 							<li>Subtotal</li>
 							</div>
-							
+							</div>
 		</div>
-
+					<div id="continuar_compra">
+							<p><a href="cliente.php">Continuar Compra</a></p>
+						</div>
 </div>
-
+						
 </div>
 <?php }elseif (isset($_SESSION["usuarioCRUD"])) { ?>
 		<div class="carrito">
@@ -308,7 +311,7 @@
 
 </div>
 						<div id="continuar_compra">
-							<p><a href="">Continuar Compra</a></p>
+							<p><a href="cliente.php">Continuar Compra</a></p>
 						</div>
 </div>
 <?php } ?>

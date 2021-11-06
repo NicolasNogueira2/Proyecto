@@ -17,16 +17,19 @@
 	CI int (8),
 	email varchar (30) UNIQUE,
 	contra varchar (40),
-	telefono int(20),
 	tipo_user varchar(1),
 	primary key (CI));
 
 	Create table Cliente(
 	CI int (15),
-	Departameto varchar(50),
+	id_Cliente int(15),
+	Departamento varchar(50),
 	Ciudad varchar(50),
 	Calle Varchar(50),
+	numero int(10),
 	rut int(20),
+	telefono int(20),
+	primary key (id_Cliente),
 	foreign key (CI) references Usuario (CI)
 	);
 
