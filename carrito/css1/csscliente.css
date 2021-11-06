@@ -252,4 +252,34 @@ font-weight: bold;
 	padding-left: 370px;
 	padding-right: 370px;
 	border-radius: 5px;
+}
+#prod .producto .formulario{
+	background: #DEDEDE;
+	width: 40%;
+	margin-left: 5%;
+	float: left;
+	border-radius: 5px;
+}
+#prod .producto .formulario .in{
+	margin-left: 55px;
+	margin-top: 10px;
+	padding: 13px;
+	padding-right: 50px;
+	border-radius: 5px;
+}
+#prod .producto .formulario .inp{
+	margin-left: 55px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	padding: 13px;
+	padding-right: 50px;
+	border-radius: 5px;
+}
+#prod .producto .formulario2{
+	background: #DEDEDE;
+	width: 40%;
+	margin-left: 10%;
+	float: left;
+	border-radius: 5px;
+}
 
