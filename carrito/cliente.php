@@ -112,32 +112,39 @@
 		if (isset($_SESSION["usuario"])) { ?>
 		<div class="formulario">	
 				<form action="validacion_cliente.php" method="POST">
-					<input type="text" name="departamento" placeholder="Departamento" required><br>	
-					<input type="text" name="Ciudad" placeholder="Ciudad" required><br>	
-					<input type="text" name="Calle" placeholder="Calle o direccion" required><br>	
-					<input type="text" name="numero" placeholder="numero de casa" required><br>	
-					+598<input type="text" name="telefono" placeholder="ej: 98 555 444" required><br>
-					<input type="int" name="rut" placeholder="RUT (opcional)" ><br>
-					<input type="submit" name="cliente_info">
+					<input class="inp" type="text" name="departamento" placeholder="Departamento" required><br>
+					<input class="in" type="text" name="Ciudad" placeholder="Ciudad" required><br>	</p>
+					<input class="in" type="text" name="Calle" placeholder="Calle o direccion" required><br>	</p>
+					<input class="in" type="text" name="numero" placeholder="numero de casa" required><br>	</p>
+					<input class="in" type="text" name="telefono" placeholder="ej: 98 555 444" required><br></p>
+					<input class="in" type="int" name="rut" placeholder="RUT (opcional)" ><br></p>
+					<input class="submit" type="submit" name="cliente_info">
+					
 				
-				</form>
 				
 		</div>
-		
+		<div class="formulario2">
+			
+		</div>
+	</form>
 		<?php }elseif (isset($_SESSION["usuarioCRUD"])) { ?>
 		<div class="formulario">	
 				<form action="validacion_cliente.php" method="POST">
-					<input type="text" name="departamento" placeholder="Departamento" required><br>	
-					<input type="text" name="Ciudad" placeholder="Ciudad" required><br>	
-					<input type="text" name="Calle" placeholder="Calle o direccion" required><br>	
-					<input type="text" name="numero" placeholder="numero de casa" required><br>	
-					+598<input type="text" name="telefono" placeholder="ej: 98 555 444" required><br>
-					<input type="int" name="rut" placeholder="RUT (opcional)" ><br>
-					<input type="submit" name="cliente_info">
+					<input class="inp" type="text" name="departamento" placeholder="Departamento" required><br>
+					<input class="in" type="text" name="Ciudad" placeholder="Ciudad" required><br>	</p>
+					<input class="in" type="text" name="Calle" placeholder="Calle o direccion" required><br>	</p>
+					<input class="in" type="text" name="numero" placeholder="numero de casa" required><br>	</p>
+					<input class="in" type="text" name="telefono" placeholder="ej: 98 555 444" required><br></p>
+					<input class="in" type="int" name="rut" placeholder="RUT (opcional)" ><br></p>
+					<input class="submit" type="submit" name="cliente_info">
+					
 				
-				</form>
 				
 		</div>
+		<div class="formulario2">
+			
+		</div>
+	</form>
 		<?php } ?>
 	
 	</div>

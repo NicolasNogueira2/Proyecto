@@ -42,7 +42,7 @@
 
 	create table listaProducto(
 	Codigo int(15),
-	nroFactura int(50) auto_increment,
+	nroFactura int(20) auto_increment,
 	cantidad int (5),
 	subTotal int(10),
 	CI int(15),
@@ -56,7 +56,8 @@
 	idVendedor int (15),
 	nroFactura int(50),
 	Hora int (10),
-	Fecha int (10),
+	Fecha date,
+	precio_total int(15),
 	primary key (CodigoFac),
 	Foreign key (idVendedor) references Vendedor (idVendedor),
 	Foreign key (nroFactura) references listaProducto (nroFactura)
