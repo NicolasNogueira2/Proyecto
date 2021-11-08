@@ -125,7 +125,7 @@
 		<div id="logueado">
 			<div id="contenido4">
 		<header><?php echo "Hola: " . "<br>" . $_SESSION["usuario"] . "<br><br>";?></header>
-		<p id="leave"><a href="cierre.php"><i class="fas fa-sign-out-alt"></i> <h1>Cerrar Sesion</h1></a></p>
+		<div id="abajo3"><a href="cierre.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a></div>
 		</div>
 			</div>	
 		<?php

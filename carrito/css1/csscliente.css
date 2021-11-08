@@ -282,4 +282,18 @@ font-weight: bold;
 	float: left;
 	border-radius: 5px;
 }
-
+#prod .producto .submit{
+	color: white;
+	background: #29B9d9;
+	padding: 10px;
+	margin-top: 30PX;
+	padding-left: 370px;
+	padding-right: 370px;
+	border-radius: 5px;
+	font-family: HElvetica;
+	font-size: 15px;
+}
+#prod .producto .submit:hover{
+	cursor: pointer;
+	background: #4694A6;
+}

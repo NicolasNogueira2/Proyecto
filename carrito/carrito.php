@@ -182,7 +182,8 @@
     			$ci = $row['CI'];
   			}	
           $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
-          while($row = mysqli_fetch_assoc($consulta)) { ?>
+          while($row = mysqli_fetch_assoc($consulta)) {
+          	$Nombre = $row['Nombre']; ?>
           <tr>
             
             <td><img height="70px" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/></td>
@@ -228,7 +229,9 @@
 							</div>
 		</div>
 					<div id="continuar_compra">
-							<p><a href="cliente.php">Continuar Compra</a></p>
+							<?php if (isset($Nombre)) {
+								?><p><a href="cliente.php">Continuar Compra</a></p>
+						<?php	} ?>
 						</div>
 </div>
 						
@@ -263,7 +266,8 @@
     			$ci = $row['CI'];	
   			}	
           $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
-          while($row = mysqli_fetch_assoc($consulta)) { ?>
+          while($row = mysqli_fetch_assoc($consulta)) { 
+          	$Nombre = $row['Nombre']; ?>
           <tr>
             
             <td><img height="50px" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/></td>
@@ -311,7 +315,10 @@
 
 </div>
 						<div id="continuar_compra">
-							<p><a href="cliente.php">Continuar Compra</a></p>
+							<?php if (isset($Nombre)) {
+								?><p><a href="cliente.php">Continuar Compra</a></p>
+						<?php	} ?>
+							
 						</div>
 </div>
 <?php } ?>

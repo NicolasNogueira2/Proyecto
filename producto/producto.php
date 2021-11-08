@@ -153,7 +153,9 @@ if  (isset($_GET['Codigo'])) {
 		<li><a href="http://localhost/proyecto/Login/login.php"><i class="fas fa-user-tie"></i></i> Iniciar sesion</a></li>
 		<li><a href="http://localhost/proyecto/Login/index.php"><i class="fas fa-user-alt"></i> Crear una cuenta</a></li> 
 		</div>
-			 <?php } else { ?>
+			 <?php } elseif (isset($_SESSION["usuario"])) { ?>
+			 	
+			 
 				<form method="post">
 					<input type="number" name="cantidad" value="1" > <br>
 					
@@ -165,7 +167,7 @@ if  (isset($_GET['Codigo'])) {
 			include("db.php");
 
 			if (isset($_POST['addcarrito'])) {
-				$query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuario]' or Email = '$_SESSION[usuarioCRUD]'";
+				$query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuario]'";
   			$result = mysqli_query($con, $query);
   			if (mysqli_num_rows($result) == 1) {
   				$row = mysqli_fetch_array($result);
@@ -177,7 +179,35 @@ if  (isset($_GET['Codigo'])) {
   				if ($cantidad>='1') {
   			
   			
-  				$query = "INSERT INTO listaproducto (Codigo, nroFactura , cantidad, subTotal, CI) VALUES ('$id', '$nroFactura' , '$cantidad', '$subTotal', '$ci')";
+  				$query = "INSERT INTO listaproducto (Codigo, nroFactura , cantidad, subTotal, CI) VALUES ('$id', '' , '$cantidad', '$subTotal', '$ci')";
+  				$result = mysqli_query($con, $query);
+  		}
+  } 
+  }else{ ?>
+  <form method="post">
+					<input type="number" name="cantidad" value="1" > <br>
+					
+			<div class="fot">
+				<input type="submit" name="addcarrito" value="Enviar al carrito" class="btn_submit">
+				</form>
+			</div>
+			<?php
+			include("db.php");
+
+			if (isset($_POST['addcarrito'])) {
+				$query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuarioCRUD]'";
+  			$result = mysqli_query($con, $query);
+  			if (mysqli_num_rows($result) == 1) {
+  				$row = mysqli_fetch_array($result);
+    			$ci = $row['CI'];	
+  			}	
+				  $nroFactura = $_POST['nroFactura'];
+  				$cantidad = $_POST['cantidad'];
+  				$subTotal = $Precio*$cantidad;
+  				if ($cantidad>='1') {
+  			
+  			
+  				$query = "INSERT INTO listaproducto (Codigo, nroFactura , cantidad, subTotal, CI) VALUES ('$id', '$nroFacturax' , '$cantidad', '$subTotal', '$ci')";
   				$result = mysqli_query($con, $query);
   		}
   } 

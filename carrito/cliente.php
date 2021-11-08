@@ -118,7 +118,7 @@
 					<input class="in" type="text" name="numero" placeholder="numero de casa" required><br>	</p>
 					<input class="in" type="text" name="telefono" placeholder="ej: 98 555 444" required><br></p>
 					<input class="in" type="int" name="rut" placeholder="RUT (opcional)" ><br></p>
-					<input class="submit" type="submit" name="cliente_info">
+					
 					
 				
 				
@@ -126,6 +126,7 @@
 		<div class="formulario2">
 			
 		</div>
+		<input class="submit" type="submit" name="cliente_info" value="Finalizar Compra">
 	</form>
 		<?php }elseif (isset($_SESSION["usuarioCRUD"])) { ?>
 		<div class="formulario">	
@@ -136,7 +137,7 @@
 					<input class="in" type="text" name="numero" placeholder="numero de casa" required><br>	</p>
 					<input class="in" type="text" name="telefono" placeholder="ej: 98 555 444" required><br></p>
 					<input class="in" type="int" name="rut" placeholder="RUT (opcional)" ><br></p>
-					<input class="submit" type="submit" name="cliente_info">
+					
 					
 				
 				
@@ -144,6 +145,7 @@
 		<div class="formulario2">
 			
 		</div>
+		<input class="submit" type="submit" name="cliente_info">
 	</form>
 		<?php } ?>
 	

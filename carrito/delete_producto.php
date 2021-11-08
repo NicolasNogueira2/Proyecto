@@ -1,10 +1,26 @@
 <?php
 
 include("db.php");
+session_start();
+if (isset($_SESSION['usuario'])) {
+  $query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuario]'";
+        $result = mysqli_query($con, $query);
+        if (mysqli_num_rows($result) == 1) {
+          $row = mysqli_fetch_array($result);
+          $ci = $row['CI']; 
+  } 
+}elseif ($_SESSION['usuarioCRUD']) {
+  $query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuarioCRUD]'";
+        $result = mysqli_query($con, $query);
+        if (mysqli_num_rows($result) == 1) {
+          $row = mysqli_fetch_array($result);
+          $ci = $row['CI']; 
+ }   
+}
 
 if(isset($_GET['Codigo'])) {
   $Codigo = $_GET['Codigo'];
-  $query = "DELETE FROM listaproducto WHERE Codigo = $Codigo";
+  $query = "DELETE FROM listaproducto WHERE Codigo = $Codigo and CI = $ci";
   $result = mysqli_query($con, $query);
   if(!$result) {
     die("Query Failed.");

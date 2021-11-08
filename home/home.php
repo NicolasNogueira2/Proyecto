@@ -132,9 +132,8 @@
 </div>
 </div>
 <div id="prod-desc">
-	
+	<p id="cartel_destacado">Productos Destacados</p>
 	<div class="producto">
-
 			<?php
 			    include("db.php");
 			            $query = "SELECT * FROM producto WHERE destacado LIKE '%Destacado' and Stock > '0' and estado = 'activo' Order by Precio ASC" ;
