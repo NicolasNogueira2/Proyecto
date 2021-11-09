@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap">
 	<link rel="stylesheet" href="css\all.min.css">
 	<link rel="stylesheet" type="text/css" href="css1/csscliente.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 	
 </head>
 <body>
@@ -123,13 +125,56 @@
 				
 				
 		</div>
+
+
+
 		<div class="formulario2">
 			
+			<script>
+				function onlyOned(checkbox) {
+    var checkboxes = document.getElementsByName('check')
+    checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false
+    })
+}
+			</script>
+			<script>
+				function onlyOne(checkbox) {
+    var checkboxes = document.getElementsByName('check2')
+    checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false
+    })
+}
+			</script>
+			<div>
+				
+			</div>
+			<div id="retiro">
+			<label id="input"> 
+			<input type="checkbox" name="check2" value="local" onclick="onlyOne(this)">Retirar en el local<br></label>
+			<label id="input">
+			<input type="checkbox" name="check2" value="envio" onclick="onlyOne(this)">Envio a tu direccion<br></label>
+			</div>
+			<div id="pago">	
+
+			<label id="input">
+			<input type="checkbox"  name="check" value="tarjeta" onclick="onlyOned(this)">Tarjeta de Credito/Debito<br></label>
+		
+			<label id="input" >
+			<input type="checkbox" name="check" value="" onclick="onlyOned(this)">Pagar en el local<br></label>
+			</div>
+
+
 		</div>
+
+
+
 		<input class="submit" type="submit" name="cliente_info" value="Finalizar Compra">
 	</form>
 		<?php }elseif (isset($_SESSION["usuarioCRUD"])) { ?>
-		<div class="formulario">	
+		
+		<div class="formulario">
+
 				<form action="validacion_cliente.php" method="POST">
 					<input class="inp" type="text" name="departamento" placeholder="Departamento" required><br>
 					<input class="in" type="text" name="Ciudad" placeholder="Ciudad" required><br>	</p>
@@ -142,10 +187,83 @@
 				
 				
 		</div>
+
+
+
 		<div class="formulario2">
-			
+			<div id="content">
+		<table class="table table-bordered">
+        <thead>
+          <tr>
+          	<th>Producto</th>
+            <th>SubTotal</th>
+        </tr>
+        </thead>
+        <tbody>
+        	<?php
+        $query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuarioCRUD]'";
+  			$result = mysqli_query($con, $query);
+  			if (mysqli_num_rows($result) == 1) {
+  				$row = mysqli_fetch_array($result);
+    			$ci = $row['CI'];
+  			}	
+          $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
+          while($row = mysqli_fetch_assoc($consulta)) {
+          	$Nombre = $row['Nombre']; ?>
+          <tr>
+            <td><?php echo $row['Nombre']; ?></td>
+            <td>US$<?php echo $row['subTotal']; ?></td>
+            
+          </tr>
+          <?php } ?>
+        </tbody>
+      </table><?php
+            $consulta = $con->query("SELECT sum(subtotal) as total FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
+          while($row = mysqli_fetch_assoc($consulta)) { 
+          	$total = $row['total'];
+          } ?>
+          <p>Precio Total: US$<?php echo $total; ?></p>
+        </div>
+			<script>
+				function onlyOned(checkbox) {
+    var checkboxes = document.getElementsByName('check')
+    checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false
+    })
+}
+			</script>
+			<script>
+				function onlyOne(checkbox) {
+    var checkboxes = document.getElementsByName('check2')
+    checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false
+    })
+}
+			</script>
+			<div>
+				
+			</div>
+			<div id="retiro">
+			<label id="input"> 
+			<input type="checkbox" name="check2" value="local" onclick="onlyOne(this)" required>Retirar en el local<br></label>
+			<label id="input">
+			<input type="checkbox" name="check2" value="envio" onclick="onlyOne(this)" required>Envio a tu direccion<br></label>
+			</div>
+			<div id="pago">	
+
+			<label id="input">
+			<input type="checkbox"  name="check" value="tarjeta" onclick="onlyOned(this)" required>Tarjeta de Credito/Debito<br></label>
+		
+			<label id="input" >
+			<input type="checkbox" name="check" value="" onclick="onlyOned(this)" required>Pagar en el local<br></label>
+			</div>
+
+
 		</div>
-		<input class="submit" type="submit" name="cliente_info">
+
+
+
+		<input class="submit" type="submit" name="cliente_info" value="Finalizar Compra">
 	</form>
 		<?php } ?>
 	
