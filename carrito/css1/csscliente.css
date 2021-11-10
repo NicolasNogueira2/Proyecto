@@ -62,9 +62,9 @@ body, html{
 		margin-top: 30px;
 	}
 	*/
-#main-header nav .search-box {
+#main-header nav .buscar {
 	background: white;
-	height: 18px;
+	height: 40px;
 	border-radius: 3px;
 	padding: 10px;
 	width: 30%;
@@ -72,7 +72,7 @@ body, html{
 	float: left;
 	margin-left: 5%;
 }
-#main-header nav .search-btn{
+#main-header nav .buscar-boton{
 	color: skyblue ;
 	float: right;
     height: 20px;
@@ -83,7 +83,7 @@ body, html{
     align-items: center;
     text-decoration: none;
 }
-#main-header nav .search-txt {
+#main-header nav .escribir-texto	 {
 	border: none;
 	background: none;
 	outline: none;
@@ -210,7 +210,7 @@ font-weight: bold;
 }
 	#prod{
 		margin-right: auto;
-	width: 67%;
+	MAX-width: 100%;
 	height: 566px;
 	float: left;
 	margin-top: 50px;
@@ -229,9 +229,12 @@ font-weight: bold;
 	color: #595959;
 	font-weight: bold;
 }
-	.producto{
+.producto{
 	width: auto;
 	min-height: 490px;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
 	height: auto;
 	max-width: auto;
 	height: auto;

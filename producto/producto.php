@@ -207,12 +207,12 @@ if  (isset($_GET['Codigo'])) {
   				if ($cantidad>='1') {
   			
   			
-  				$query = "INSERT INTO listaproducto (Codigo, nroFactura , cantidad, subTotal, CI) VALUES ('$id', '$nroFacturax' , '$cantidad', '$subTotal', '$ci')";
+  				$query = "INSERT INTO listaproducto (Codigo, nroFactura , cantidad, subTotal, CI) VALUES ('$id', '$nroFactura' , '$cantidad', '$subTotal', '$ci')";
   				$result = mysqli_query($con, $query);
   		}
   } 
   } ?>
-			</div> 
+			</div> 	
 		</div>
 	</div>
 

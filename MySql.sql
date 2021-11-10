@@ -52,14 +52,15 @@
 	);
 
 	Create table Factura(
-	CodigoFac int (15),
-	idVendedor int (15),
-	nroFactura int(50),
-	Hora int (10),
+	CodigoFac int (15) auto_increment,
+	nroFactura int(20),
 	Fecha date,
-	precio_total int(15),
+	codigoCliente int(15),
+	precioTotal int(15),
+	retiro boolean,
+	pago boolean,
 	primary key (CodigoFac),
-	Foreign key (idVendedor) references Vendedor (idVendedor),
+	Foreign key (codigoCliente) references Usuario (CI),
 	Foreign key (nroFactura) references listaProducto (nroFactura)
 	);
 
@@ -100,5 +101,5 @@
 	Foreign key (idVendedor) references Vendedor (idVendedor)
 	);
 
-Insert into Usuario (CI, email, contra, tipo_user) Values ('56873873', 'admin@gmail.com', 'lp2021', '1')
+Insert into Usuario (CI, email, contra, tipo_user) Values ('56873873', 'admin@gmail.com', 'lp2021', '1');
 
