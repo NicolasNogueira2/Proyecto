@@ -190,7 +190,7 @@
           		while($row = mysqli_fetch_assoc($consulta)) { 
           		$total1 = $row['total1'];
          		} ?>
-          <p>Precio Total: US$<?php echo $total; ?></p>
+          <p>Precio Total: US$<?php echo $total1; ?></p>
         </div>
 			<script>
 				function onlyOned(checkbox) {

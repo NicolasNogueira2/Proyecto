@@ -298,7 +298,7 @@
   				$row = mysqli_fetch_array($result);
     			$ci = $row['CI'];	
   			}	
-          $consulta = $con->query("SELECT sum(subtotal) as total1 FROM producto p, listaproducto l where l.Codigo = p.codigo and nroFactura = '$ci'"); 
+          $consulta = $con->query("SELECT sum(subtotal) as total1 FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
           while($row = mysqli_fetch_assoc($consulta)) { 
           	$total1 = $row['total1'];
           } ?>

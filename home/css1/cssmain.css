@@ -246,10 +246,10 @@ font-weight: bold;
 	height: 320px;
 	margin: auto;
 	position: relative;
-	list-style: none; /*quita el estilo de lista heredado de la lista ul y los elementos li*/
-	display: flex; /*pone un radio botton uno al lado del otro*/
-	justify-content: center; /*para que los radios botton se centren en sentido vertical*/
-	align-items: flex-end; /*para que los radios botton esten al final del contenedor*/
+	list-style: none; 
+	display: flex; 
+	justify-content: center; 
+	align-items: flex-end;
 }
 
 .producto .slider img{
@@ -258,36 +258,26 @@ font-weight: bold;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	opacity: 0;  /*para que las imagenes esten en opacidad cero, es decir que esten transparentes, estan ahi pero
-	 no la vemos cuando activemos la pseudo-class checked va a mostrar .... esta mas abajo ;)*/
-	transition: all 0.7s; /*efecto con el cual pasan las imagenes*/
+	opacity: 0;  
+	transition: all 0.7s;
 }
 
 .producto .slider input[type="radio"]{
-		display: none; /*para activar el radio botton desde el label */
+		display: none; 
 		
 }
 
-/*codigos para que se muestren las imagenes correspondiente a los radios botton seleccionados*/
-  
-
-  /*el simbolo ~ es un selector de etiquetas hermanas
-	las etiquetas padres son aquellas que contienen otras etiquetas
-	las etiquetas hijas son las que estan contenidas dentro de otras
-	las etiquetas hermanas son aquellas que estan en un mismo nivel de jerarquia*/
 
 
 
-.producto .slider input[type="radio"]:checked ~ img{  /* esto quiere decir que cuando se haga check en el elemento radio 
-											va a mostrar el elemento hermano, en este caso img */
-	opacity: 1; /* cuando esta activado el radio botton muestra la imagen, opacidad 1 es lo opuesto a transparencia*/
+.producto .slider input[type="radio"]:checked ~ img{  
+	opacity: 1;
 
 }
 
 .producto label {  
 	position: relative;
-	z-index: 50;/*indica el orden de un elemento posicionado y sus descendientes.
-	 Cuando varios elementos se superponen, los elementos con mayor valor z-index cubren aquellos con menor valor*/
+	z-index: 50;
 	 margin: 10px;
 	 display: block;
 	 width: 15px;
@@ -366,5 +356,4 @@ font-weight: bold;
 	width: 28%;
 	padding: 10px;
 	margin-bottom: 0px;
-
 }
