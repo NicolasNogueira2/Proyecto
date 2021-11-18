@@ -1,50 +1,33 @@
-	 <?php
-include("db.php");
 
-$Nombre = '';
-$Descripcion= '';
-$Codigo= '';
-$Stock= '';
-$Precio= '';
-$imagen= '';
-
-if  (isset($_GET['Codigo'])) {
-  $id = $_GET['Codigo'];
-  $query = "SELECT * FROM producto WHERE Codigo=$id";
-  $result = mysqli_query($con, $query);
-  if (mysqli_num_rows($result) == 1) {
-    $row = mysqli_fetch_array($result);
-    $Nombre = $row['Nombre'];
-    $Descripcion = $row['Descripcion'];
-    $Stock = $row['Stock'];
-    $Precio = $row['Precio'];
-  }
-}
-?>
-<!DOCTYPE html>
+ <!DOCTYPE html>
+ <?php include("db.php"); ?>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0 ">
-	<title>Producto</title>
+	<title>carrito</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap">
-	<link rel="stylesheet" href="css1\cssmain.css">
 	<link rel="stylesheet" href="css\all.min.css">
+	<link rel="stylesheet" type="text/css" href="css1/cssmain.css">
+	
 </head>
 <body>
-	<?php session_start() ?>
+	<?php session_start(); ?>
 	<div id="general">
 	<div id="main-header">
-	<!--<header id="main-header">-->
+	
 		<a  href="http://localhost/proyecto/home/home.php"><img class="img" src="logoHeader.png" width="120" height="100" /></a>
 		<nav>
-	<div class="search-box" >
-			<form action="buscador_producto.php" method="get">
-			<input class="search-txt" type="text" name="busqueda" placeholder="Buscar producto...">
-				<a class="search-btn" ><i class="fas fa-search"></i></a>
-			</form>
 			
-		</div>	
+	<div class="search-box" >
+		<form action="buscador_producto.php" method="get" >
+		<input class="search-txt" type="text" name="busqueda" placeholder="Buscar producto..." >
+		
+			<a class="search-btn" ><i class="fas fa-search"></i>
+		</a>
+		</form>
+		
+	</div>
 
 			<ul>
 				<li><a href="http://localhost/proyecto/ubicacion/ubicacion.php"><i class="fas fa-map-marker-alt"></i></a></li>
@@ -114,7 +97,7 @@ if  (isset($_GET['Codigo'])) {
 		</li>
 
 	</ul>
-<div id="contacto">
+	<div id="contacto">
 			<p id="contact"><i class="fas fa-phone-alt"></i>	099487566</p>	
 			<p id="contact"><i class="fas fa-envelope"></i> lptecto2021@gmail.com</p>
 			<p id="contact"><i class="fas fa-clock"></i> L a V de 8:00 a 18:00</p>
@@ -123,72 +106,76 @@ if  (isset($_GET['Codigo'])) {
 	</div>
 </div>
 <div id="prod">
-				
-		<div id="foto">
-            <img id="zoom" height="400px", width="400" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/>
-        </div>
-        <div id="info">
+	<?php 
+	# USUARIO ADMINISTRADOR ?>
+	<?php if(isset($_SESSION["usuarioCRUD"])) { 
+		 $query = "SELECT * FROM usuario WHERE email = '$_SESSION[usuarioCRUD]'";
+  			$result = mysqli_query($con, $query);
+  			if (mysqli_num_rows($result)>= 1) {
+  				$row = mysqli_fetch_array($result);
+    			$ci = $row['CI'];
+  			}
 
-        <h1 id="precio">$<?php echo  $Precio; ?></h1>
-        <p id="nombre"><?php echo  $Nombre; ?></p>
-        <?php if($Stock > '1'){
-        	?><p id="stock">Stock: <?php echo  $Stock; ?> disponibles</p><?php
-        }else if ($Stock = '1'){
-        	?><p id="stock">Stock: <?php echo  $Stock; ?> disponible</p><?php
-        } ?>
+		# $query = "SELECT * FROM factura WHERE codigoCliente = '$ci'";
+  		#	$result = mysqli_query($con, $query);
+  		#	if (mysqli_num_rows($result) >= 1) {
+  		#		$row = mysqli_fetch_array($result);
+  				
+  				?><table>
+  					<thead>
+  						<tr>
+  							<th>Codigo Factura</th>
+  						</tr>
+  					</thead>
+<?php
+  				$consulta = $con->query("SELECT * FROM factura WHERE CI = '$ci'"); 
+          while($row = mysqli_fetch_assoc($consulta)) { ?>
+  				
+  				
+  					<tbody>
+  						<tr>
+  							<td>
+  								 <a href="factura.php?CodigoFac=<?php echo $row['idFactura']; ?>"><?php echo $row['idFactura']; ?></a> </td>
+  						</tr>
+  					</tbody>
+  				</table>
+  			<?php }
+  			
+  			# USUARIO NORMAL
+	 }elseif(isset($_SESSION["usuario"])) { 
+	 	$query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuario]'";
+  			$result = mysqli_query($con, $query);
+  			if (mysqli_num_rows($result)>= 1) {
+  				$row = mysqli_fetch_array($result);
+    			$ci = $row['CI'];
+  			}
 
+		# $query = "SELECT * FROM factura WHERE codigoCliente = '$ci'";
+  		#	$result = mysqli_query($con, $query);
+  		#	if (mysqli_num_rows($result) >= 1) {
+  		#		$row = mysqli_fetch_array($result);
+  				
+  				?><table>
+  					<thead>
+  						<tr>
+  							<th>Codigo Factura</th>
+  						</tr>
+  					</thead>
+<?php
+  				$consulta = $con->query("SELECT * FROM factura WHERE codigoCliente = '$ci'"); 
+          while($row = mysqli_fetch_assoc($consulta)) { ?>
+  				
+  				
+  					<tbody>
+  						<tr>
+  							<td>
+  								 <a href="factura.php?CodigoFac=<?php echo $row['CodigoFac']; ?>"><?php echo $row['CodigoFac']; ?></a> </td>
+  						</tr>
+  					</tbody>
+  				</table>
+  			<?php } } ?>
+</div>
 
-        <input type="checkbox" id="btn-up">
-	      <label for="btn-up" class="up"><a id="carrito_btn">Añadir al carrito</a></label> 
-
-	<div class="ventana">
-		<div class="contenedor">
-			<header>Ingrese Cantidad</header>
-			<label for="btn-up"><i class="fas fa-times"></i></label> 
-			<div class="contenido">
-				<?php 
-				if(!isset($_SESSION["usuario"]) and !isset($_SESSION["usuarioCRUD"])){
-					?><div id="loguearse">
-			<li><p>¿No tienes una cuenta?</p></li>
-		<li><a href="http://localhost/proyecto/Login/login.php"><i class="fas fa-user-tie"></i></i> Iniciar sesion</a></li>
-		<li><a href="http://localhost/proyecto/Login/index.php"><i class="fas fa-user-alt"></i> Crear una cuenta</a></li> 
-		</div>
-			 <?php } elseif (isset($_SESSION["usuario"])) { ?>
-			 	
-			 
-				<form action="addcarrito.php?Codigo=<?php echo $id; ?>" method="post">
-					<input type="number" name="cantidad" value="1" > <br>
-					
-			<div class="fot">
-				<input type="submit" name="addcarrito" value="Enviar al carrito" class="btn_submit">
-				</form>
-			</div>
-			<?php
-			
-  }else{ ?>
-  <form action="addcarrito.php?Codigo=<?php echo $id; ?>" method="post">
-					<input type="number" name="cantidad" value="1" > <br>
-					
-			<div class="fot">
-				<input type="submit" name="addcarrito" value="Enviar al carrito" class="btn_submit">
-				</form>
-			</div>
-			<?php
-			
-  } 
-  ?>
-			</div> 	
-		</div>
-	</div>
-
-        </div>
-
-        <div id="descripcion">
-
-        <p id=""><?php echo  $Descripcion; ?></p>
-
-        </div>  
-	 
 
 
 

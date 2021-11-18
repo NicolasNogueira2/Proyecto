@@ -79,7 +79,7 @@
   				$row = mysqli_fetch_array($result);
     			$ci = $row['CI'];
   			}	
-          $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
+          $consulta = $con->query("SELECT * FROM producto p, carrito c where p.codigo = c.idProducto and c.idUsuario = '$ci' and c.estadoCarrito='1'"); 
           while($row = mysqli_fetch_assoc($consulta)) {
           	$Nombre = $row['Nombre']; ?>
           <tr>
@@ -90,7 +90,7 @@
           <?php } ?>
         </tbody>
       </table><?php
-            $consulta = $con->query("SELECT sum(subtotal) as total FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
+            $consulta = $con->query("SELECT sum(subtotal) as total FROM carrito c where c.idUsuario = '$ci' and c.estadoCarrito='1'"); 
           while($row = mysqli_fetch_assoc($consulta)) { 
           	$total = $row['total'];
           } ?>
@@ -175,7 +175,7 @@
   				$row = mysqli_fetch_array($result);
     			$ci = $row['CI'];
   			}	
-          $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
+          $consulta = $con->query("SELECT * FROM producto p, carrito c where p.codigo = c.idProducto and c.idUsuario = '$ci' and c.estadoCarrito='1'"); 
           while($row = mysqli_fetch_assoc($consulta)) {
           	$Nombre = $row['Nombre']; ?>
           <tr>
@@ -186,9 +186,9 @@
           <?php } ?>
         </tbody>
       </table><?php
-            $consulta = $con->query("SELECT sum(subtotal) as total1 FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
+            $consulta = $con->query("SELECT sum(subtotal) as total FROM carrito c where c.idUsuario = '$ci' and c.estadoCarrito='1'"); 
           		while($row = mysqli_fetch_assoc($consulta)) { 
-          		$total1 = $row['total1'];
+          		$total1 = $row['total'];
          		} ?>
           <p>Precio Total: US$<?php echo $total1; ?></p>
         </div>

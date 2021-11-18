@@ -1,0 +1,57 @@
+html{
+	height: auto;
+	width: 500px;
+	margin: 20px;
+	padding: 0px;
+
+}
+ body{
+ 	height: 100%;
+ 	width: 100%;
+ }	
+ #facturaTotal{
+ 	border: 1px solid black;
+ 	height: 100%;
+ }
+ #head{
+ 	width: 100%;
+
+ }
+ #img{
+ 	width: 34%;
+ 	margin-right: 0;
+ 	float: left;
+ }
+#img img{
+	width: 100%;
+
+}
+#img #info{
+	font-family: Helvetica;
+	margin-left: 5px;
+	float: left	;
+}
+#numFac{
+	float: right;
+	margin-right: 40PX;
+	margin-top: 50px;
+}
+#factura table{
+	border: 1px solid black;
+	margin-left: 50px;
+	max-width: 400px;
+	width: 50px;
+}
+#PrecioTotal{
+	margin-left: 140px;
+	border: 1px solid black;
+	margin-right: 160px;
+}
+#PrecioTotal p{
+	border: 1px solid black;
+	margin: 4px;
+}
+#todo{
+	margin: 100px;
+	width: 600px;
+}

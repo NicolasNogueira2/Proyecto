@@ -23,14 +23,12 @@
 		<nav>
 			
 	<div class="search-box" >
-		<form action="buscador_producto.php" method="get" >
-		<input class="search-txt" type="text" name="busqueda" placeholder="Buscar producto..." >
-		
-			<a class="search-btn" ><i class="fas fa-search"></i>
-		</a>
-		</form>
-		
-	</div>
+			<form action="buscador_producto.php" method="get">
+			<input class="search-txt" type="text" name="busqueda" placeholder="Buscar producto...">
+				<a class="search-btn" ><i class="fas fa-search"></i></a>
+			</form>
+			
+		</div>	
 
 			<ul>
 				<li><a href="http://localhost/proyecto/ubicacion/ubicacion.php"><i class="fas fa-map-marker-alt"></i></a></li>

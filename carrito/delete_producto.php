@@ -20,7 +20,7 @@ if (isset($_SESSION['usuario'])) {
 
 if(isset($_GET['Codigo'])) {
   $Codigo = $_GET['Codigo'];
-  $query = "DELETE FROM listaproducto WHERE Codigo = $Codigo and CI = $ci";
+  $query = "UPDATE carrito SET estadoCarrito = '0' where idUsuario = '$ci' and estadoCarrito='1' and idPRoducto = '$Codigo'";
   $result = mysqli_query($con, $query);
   if(!$result) {
     die("Query Failed.");

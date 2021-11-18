@@ -181,7 +181,7 @@
   				$row = mysqli_fetch_array($result);
     			$ci = $row['CI'];
   			}	
-          $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
+          $consulta = $con->query("SELECT * FROM producto p, carrito c where p.codigo = c.idProducto and c.idUsuario = '$ci' and c.estadoCarrito='1'"); 
           while($row = mysqli_fetch_assoc($consulta)) {
           	$Nombre = $row['Nombre']; ?>
           <tr>
@@ -190,9 +190,9 @@
             <td><?php echo $row['Nombre']; ?></td>
             <td>US$<?php echo $row['Precio']; ?></td>
             <td><?php echo $row['cantidad']; ?></td>
-            <td>US$<?php echo $row['subTotal']; ?></td>
+            <td>US$<?php echo $row['Precio']*$row['cantidad']; ?></td>
             <td>
-            <a href="delete_producto.php?Codigo=<?php echo $row['Codigo']?>" class="btn btn-danger">
+            <a href="delete_producto.php?Codigo=<?php echo $row['idProducto']?>" class="btn btn-danger">
                   <i class="far fa-trash-alt"></i>
             </a>
             </td>
@@ -215,7 +215,7 @@
   				$row = mysqli_fetch_array($result);
     			$ci = $row['CI'];	
   			}	
-          $consulta = $con->query("SELECT sum(subtotal) as total FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
+          $consulta = $con->query("SELECT sum(subtotal) as total FROM carrito c where c.idUsuario = '$ci' and c.estadoCarrito='1'"); 
           while($row = mysqli_fetch_assoc($consulta)) { 
           	$total = $row['total'];
           } ?>
@@ -265,7 +265,7 @@
   				$row = mysqli_fetch_array($result);
     			$ci = $row['CI'];	
   			}	
-          $consulta = $con->query("SELECT * FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
+          $consulta = $con->query("SELECT * FROM producto p, carrito c where p.codigo = c.idProducto and c.idUsuario = '$ci' and c.estadoCarrito='1'");
           while($row = mysqli_fetch_assoc($consulta)) { 
           	$Nombre = $row['Nombre']; ?>
           <tr>
@@ -276,7 +276,7 @@
             <td><?php echo $row['cantidad']; ?></td>
             <td>US$<?php echo $row['subTotal']; ?></td>
             <td>
-            <a href="delete_producto.php?Codigo=<?php echo $row['Codigo']?>" class="btn btn-danger">
+            <a href="delete_producto.php?Codigo=<?php echo $row['idProducto']?>" class="btn btn-danger">
                   <i class="far fa-trash-alt"></i>
             </a>
             </td>
@@ -298,9 +298,9 @@
   				$row = mysqli_fetch_array($result);
     			$ci = $row['CI'];	
   			}	
-          $consulta = $con->query("SELECT sum(subtotal) as total1 FROM producto p, listaproducto l where l.Codigo = p.codigo and CI = '$ci'"); 
+          $consulta = $con->query("SELECT sum(subtotal) as total FROM carrito c where c.idUsuario = '$ci' and c.estadoCarrito='1'");  
           while($row = mysqli_fetch_assoc($consulta)) { 
-          	$total1 = $row['total1'];
+          	$total1 = $row['total'];
           } ?>
 						<div id="Sub1">
 							<li>US$<?php echo $total1; ?></li>	
@@ -317,10 +317,14 @@
 						<div id="continuar_compra">
 							<?php if (isset($Nombre)) {
 								?><p><a href="cliente.php">Continuar Compra</a></p>
+
 						<?php	} ?>
 							
 						</div>
 </div>
+<div>
+			<a href="http://localhost/proyecto/carrito/historial.php"><p>Historial de Compras</p></a>
+		</div>
 <?php } ?>
 
 	</div>

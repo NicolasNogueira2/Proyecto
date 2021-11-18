@@ -9,8 +9,7 @@ if (isset($_POST['enviar'])) {
 			$cedula = trim($_POST['cedula']);
 			$email = trim($_POST['email']);
 			$contra = trim($_POST['contra']);
-			$tipo_user = '2';
-			$consulta = "INSERT INTO usuario(CI, Email, contra, tipo_user) VALUES ('$cedula','$email','$contra', '$tipo_user')";
+			$consulta = "INSERT INTO usuario(CI, email, contra, estadoCliente) VALUES ('$cedula','$email','$contra', '0')";
 			$resultado = mysqli_query($conex, $consulta);
 			if ($resultado){
 				?>
