@@ -107,6 +107,7 @@
 </div>
 <div id="prod">
 	
+	
 	<div class="producto">
 		<?php
 
@@ -233,6 +234,9 @@
 								?><p><a href="cliente.php">Continuar Compra</a></p>
 						<?php	} ?>
 						</div>
+					<div id="continuar_compra">
+							<p><a href="historial.php">Historial  compras</a></p>							
+						</div>
 </div>
 						
 </div>
@@ -319,16 +323,16 @@
 								?><p><a href="cliente.php">Continuar Compra</a></p>
 
 						<?php	} ?>
-							
 						</div>
+						<div id="continuar_compra">
+							<p><a href="historial.php">Historial  compras</a></p>							
+						</div>
+						
 </div>
-<div>
-			<a href="http://localhost/proyecto/carrito/historial.php"><p>Historial de Compras</p></a>
-		</div>
-<?php } ?>
 
 	</div>
 	
+	<?php }?>
 </div>
 
 

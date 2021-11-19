@@ -1,12 +1,12 @@
 html{
-	height: auto;
+	height: 100%;
 	width: 500px;
 	margin: 20px;
 	padding: 0px;
 
 }
  body{
- 	height: 100%;
+ 	height: auto;
  	width: 100%;
  }	
  #facturaTotal{
@@ -52,6 +52,6 @@ html{
 	margin: 4px;
 }
 #todo{
-	margin: 100px;
+	height: 1000px;
 	width: 600px;
 }

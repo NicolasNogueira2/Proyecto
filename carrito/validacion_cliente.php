@@ -18,11 +18,13 @@ session_start();
   				$tel = $_POST['telefono'];
   				$rut = $_POST['rut'];
   				$retiro = $_POST['check2'];
-				$pago = $_POST['check'];
+  				if (empty($retiro)) {
+  					header('Location: cliente.php');
+  				}
 
   				$consulta = "INSERT INTO cliente (idU, Departamento, Ciudad, Calle, numero, rut , telefono ) VALUES ('$ci','$depa','$ciudad', '$calle', '$num', '$rut', '$tel')";
 					$resultado = mysqli_query($con, $consulta);
-					/*header('Location: cliente.php');*/
+					
 				} }elseif (isset($_SESSION["usuarioCRUD"])) {
 				if (isset($_POST['cliente_info'])) {
 				$query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuarioCRUD]'";
@@ -39,7 +41,7 @@ session_start();
   				$tel = $_POST['telefono'];
   				$rut = $_POST['rut'];
   				$retiro = $_POST['check2'];
-				$pago = $_POST['check'];
+  				
 
   				$consulta = "INSERT INTO cliente (idU, Departamento, Ciudad, Calle, numero, rut , telefono ) VALUES ('$ci','$depa','$ciudad', '$calle', '$num', '$rut', '$tel')";
 					$resultado = mysqli_query($con, $consulta);
@@ -49,13 +51,9 @@ session_start();
           		while($row = mysqli_fetch_assoc($consulta)) { 
           		$total = $row['total'];
          		}
-         		if (!isset($retiro) and !isset($pago)) {
+         		if (empty($retiro)) {
          		 	header("Location: cliente.php");
 
-         		 }elseif(!isset($retiro) and isset($pago)){
-         		 	header("Location: cliente.php");
-         		 }elseif(isset($retiro) and !isset($pago)){
-         		 	header("Location: cliente.php");
          		 }
          		 date_default_timezone_set("America/Argentina/Buenos_Aires");
          		 $fecha = date("y-m-d");
@@ -67,7 +65,12 @@ session_start();
   						    $query = "UPDATE carrito SET estadoCarrito = '0' where idUsuario = '$ci' and estadoCarrito='1'";
   							$result = mysqli_query($con, $query); 
 
-         						 	header('location: http://localhost/proyecto/carrito/historial.php')
+  							if ($retiro == '1') {
+  								header('location: http://localhost/proyecto/carrito/tarjetas.php');
+  							}else{
+  								header('location: http://localhost/proyecto/carrito/gracias.php');
+  							}
+         					
 
 				
 

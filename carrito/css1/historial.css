@@ -266,230 +266,80 @@ font-weight: bold;
 	float: center;
 	margin-left: 25px;
 }
-tbody{
-	text-align: center;
-}
-tbody tr td{
-	padding: 10px;
-	padding-left: 50px;
-	border-bottom: 1px solid skyblue;
-}
-thead tr th{
 
-	padding: 10px;
-	padding-left: 50px;
-}
-tbody tr td a i{
-	color: white;
-	padding: 7px;
-	border: 1px solid black;
-	border-radius: 3px;
-	background: red;
-}
-#TotalCarrito {
-	margin-top:50px;
-	width:100%;
-	float: left;
-	height: 350px;
+table{
+	margin-left: 300px;
+
+	width: 300px;
+
 
 }
-#TotalCarrito #contenido2 {
-	width: 172px;
-	border: 1px solid rgba(89, 89, 89, 0.3);
-	height: 49px;	
-	background: rgba(89, 89, 89, 0.3);
-	display: block;
-	font-family: Helvetica;
-	font-size: 17px;
-}	
-#contenido li {
-	list-style: none;
-}
-#TotalCarrito #contenido2 li {
-	list-style: none;
-	margin-left: 15%;
-	font-weight: bold;
-}
-#contenido2 #Sub{
-	margin-top: 10px;
-	font-family: Helvetica;
-}
-
-#contenido #Sub1{
-	border-bottom: 1px solid rgba(89, 89, 89, 0.3);
-	height: 50px;
-	margin-left: 0px;
-	width: 80%;
-	float: right;
-	font-family: Helvetica;
-}
-#continuar_compra{
-    margin-top: 60px;
-	font-family: Helvetica;
-}
-#continuar_compra a{
-	color: white;
-	background: #29B9d9;
-	padding: 10px;
-	padding-left: 370px;
-	padding-right: 370px;
-	border-radius: 5px;
-}
-#continuar_compra a:hover {
-
-	background: #4694A6;
-}
-
-#Sub1 li{
-	margin-top: 15px;
-	margin-left: 5px;
-	text-align: justify;
-}
-
-#prod .producto #loguearse{
-	padding: 30px;
-	background: #29B9d9;
-	font-family: Helvetica;
-	border-radius: 5px;
-	margin-bottom: 390px;
-	margin-left: 320px;
-
-}
-#prod .producto #loguearse li{
-	list-style: none;
-	color: white;
+table th{
 	padding: 5px;
-	padding-bottom: 39px;
+	border-bottom: 2px solid #29B9d9;
+	padding-bottom: 5px;
 }
-#prod .producto #loguearse li a{
-	color: #595959;
+table td{
+	
 	padding: 10px;
-	height: 50px;
-	background: white;
-	border-radius: 5px;
-	text-decoration: none; 
+	padding-left: 125px;
+	border-bottom: 2px solid #29B9d9;
+	border-radius: 10px;
 }
 
-#prod-desc .producto .card{
- 	background: #F8F7F7;
- 	display: block;
+#tarjeta {
+	
+margin-left: 450px;
+}
+#tarjeta #titletar{
+	font-family: Helvetica;
+	padding: 5px;
+	background: #29B9d9;
+	color: white;
+	padding: 10px;
+	padding-left: 22px;
+	margin-left: 7px;
+	margin-right: 150px;
+
+}
+#tarjeta #nombre{
 	width: 250px;
-	height: 300px;
-	border-radius: 5px;
-	box-shadow: 0 2px 2px #29B9d9;
-	overflow: hidden;
-	margin: 20px;
-	padding-top: 20px;
-	text-align: center;
-	transition: all 0.30s;
-
-
+	padding: 5px;
+	margin: 8px;
 }
-#prod-desc .producto .card .imagen{
-	border-radius: 5px;
+#tarjeta #num{
+	width: 250px;
+	padding: 5px;
+	margin: 8px;
 }
-#prod-desc .producto .card .letras .precio{
-	color: #f56200;
-	font-family: Helvetica;
-	font-style: ;
-	font-weight: bold;
-	}
-	#prod-desc .producto .card .letras .nombre{
-	font-family: Helvetica;
-	color: #666565;
-	margin-left: 5px;
-	padding-bottom: 5PX	;
-	font-weight: bold;
-	}
-	#prod-desc .producto .card .letras{
-		background: #E7E7E7;
-		margin-left: 14px;
-		margin-right: 14px;
-		border-radius: 	5px;
-	}
-#prod-desc .producto .card:hover{
-	transform: translate(-10px);
-	box-shadow: 0 6px 8px #4694A6;
+#tarjeta #cvc{
+	width: 60px;
+	padding: 5px;
+	margin: 8px;
 }
-	#prod-desc{
-	margin-right: auto;
-	width: 67%;
-	height: 350px;
-	float: left;
-	margin-top: -200px;
-
-
+#tarjeta #mes{
+	
+	width: 50px;
+	padding: 5px;
+	margin: 8px;
+	margin-left: 30px;
 }
-.ventana{
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+#tarjeta #año{
+	width: 50px;
+	padding: 5px;
+	margin: 8px;
 }
-.ventana{
-	position: fixed; /*define una posición relativa*/
-	top: 0;
-	left: 0;
-	background: rgba(0,0,0,0.5); /*colores que se determian como rgb y al final la opacidad para que sea transparente*/
-	transition: all 500ms ease;
-	opacity: 0;
-	visibility: hidden; /*oculta la ventana ya que necesitamos que se abra al hacer click en el boton*/
-}
-
-/*ACLARACIÓN COMO EL BOTON Y LA X TIENEN EL MISMO ID, CUANDO SE DE CLIC EN EL BOTÓN EL CHECK SE ACTIVARA Y MOSTRARÁ 
-LA VENTANA, AL DAR EN X SE DESACTIVA CHECK POR ENDE SE CIERRA*/
-
-#btn-up:checked ~ .ventana{
-	opacity: 1;
-	visibility: visible;
-}
-
-.contenedor{
-	width: 500px;
-	height: 400px;
-	margin: auto; /*para que se centre el elemetno de forma automatica*/
-	background: #ffff;
-	box-shadow: 1px 7px 25px black; /*efecto sombra*/
-	transition: all 500ms ease;
-	position: relative;
-	transform: translateY(-30%);
-}
-
-#btn-up:checked ~ .ventana .contenedor{
-	transform: translateY(0);   /*da efecto de traslacion en el eje de las y, por ende en el sentido vertical*/
-}
-
-.contenedor header{
-	padding: 20px;
+#tarjeta #submittar{
+	width:263px;
+	padding: 5px;
+	margin: 8px;
 	background: #29B9d9;
-	color: #ffff;
+	border-style: none;
+	color: white;
+	border-radius: 5px;
 }
-
-.contenedor label{
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	color: #ffff;
+#tarjeta #submittar:hover{
+	background: #4694A6;
 	cursor: pointer;
 }
 
-#btn-up{
-	position: absolute;
-
-	display: none; 
-}
-
-.up{
-	position: absolute;
-	background: #29B9d9;
-	cursor: pointer;
-
-	border-radius: 5px;
-	padding: 10px;
-	color: #ffff;
-	font-family: Helvetica;
-}
-.up:hover{
-background: #4694A6;
-}

@@ -38,15 +38,15 @@ if  (isset($_GET['Codigo'])) {
         date_default_timezone_set("America/Argentina/Buenos_Aires");
         $fecha = date("y-m-d");
 
+        $query = "SELECT * FROM carrito WHERE idUsuario = '$ci' and idProducto = '$id'  and estadoCarrito = '1'";
         $result = mysqli_query($con, $query);
         if (mysqli_num_rows($result) == 1) {
           $row = mysqli_fetch_array($result);
-          $ci = $row['CI']; 
+          $carritoCantidad = $row['cantidad'];
+          $query = "UPDATE carrito set cantidad = '$carritoCantidad+$cantidad'";
+        $result = mysqli_query($con, $query);
+        header('Location: http:/proyecto/carrito/carrito.php');
         } 
-        $cantidad = $_POST['cantidad'];
-         $subTotal = $Precio*$cantidad;
-        date_default_timezone_set("America/Argentina/Buenos_Aires");
-        $fecha = date("y-m-d");
 
         $query = "SELECT idCarrito as idCarrito FROM carrito where idUsuario = '$ci'";
         $result = mysqli_query($con, $query);
@@ -152,22 +152,13 @@ if  (isset($_GET['Codigo'])) {
                  $query = "INSERT INTO carrito (idCarrito, idProducto, cantidad,fecha ,subTotal, idUsuario, estadoCarrito) VALUES ('$idCarrito','$id', '$cantidad', '$fecha', '$subTotal' ,'$ci' , '1')";
                  $result = mysqli_query($con, $query);
                }
-            # $query = "INSERT INTO carrito (idCarrito, idProducto, cantidad,fecha , idUsuario, estadoCarrito) VALUES ('$idCarrito','$id', '$cantidad', '$fecha' ,'$ci' , '1')";
-          #  $result = mysqli_query($con, $query);
           }else{
             $idCarrito = $idCarrito+1;
                  $query = "INSERT INTO carrito (idCarrito, idProducto, cantidad,fecha ,subTotal, idUsuario, estadoCarrito) VALUES ('$idCarrito','$id', '$cantidad', '$fecha', '$subTotal' ,'$ci' , '1')";
                  $result = mysqli_query($con, $query);
           }
 
-        # $cantidad = $_POST['cantidad']; 
-        # $subTotal = $Precio*$cantidad;
-        # if ($cantidad>='1') {
-        
-        # date_default_timezone_set("America/Argentina/Buenos_Aires");
-        #   $fecha = date("y-m-d");
-        # $query = "INSERT INTO carrito (idProducto, cantidad,fecha , idUsuario, estadoCarrito) VALUES ('$id', '$cantidad', '$fecha' ,'$ci' , '1')";
-        # $result = mysqli_query($con, $query);
+       
       }
   }
    header('Location: http:/proyecto/carrito/carrito.php');

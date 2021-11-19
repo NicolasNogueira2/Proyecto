@@ -119,17 +119,9 @@
 			</div>
 			<div id="retiro">
 			<label id="input"> 
-			<input type="checkbox" name="check2" value="local" onclick="onlyOne(this)">Retirar en el local<br></label>
+			<input type="checkbox" name="check2" value="0" onclick="onlyOne(this)">Retirar en el local<br></label>
 			<label id="input">
-			<input type="checkbox" name="check2" value="envio" onclick="onlyOne(this)">Envio a tu direccion<br></label>
-			</div>
-			<div id="pago">	
-
-			<label id="input">
-			<input type="checkbox"  name="check" value="tarjeta" onclick="onlyOned(this)">Tarjeta de Credito/Debito<br></label>
-		
-			<label id="input" >
-			<input type="checkbox" name="check" value="pagarlocal" onclick="onlyOned(this)">Pagar en el local<br></label>
+			<input type="checkbox" name="check2" value="1" onclick="onlyOne(this)">Envio a tu direccion<br></label>
 			</div>
 
 
@@ -217,26 +209,14 @@
 			<label id="input">
 			<input type="checkbox" name="check2" value="0" onclick="onlyOne(this)">Envio a tu direccion<br></label>
 			</div>
-			<div id="pago">	
 
-			<label id="input">
-			<input type="checkbox"  name="check" value="1" onclick="onlyOned(this)">Tarjeta de Credito/Debito<br></label>
+
 		
-			<label id="input" >
-			<input type="checkbox" name="check" value="0" onclick="onlyOned(this)">Pagar en el local<br></label>
-			</div>
-
-
-		</div>
-
-
-
-		<input class="submit" type="submit" name="cliente_info" value="Finalizar Compra">
-	</form>
-		<?php } ?>
 	
 	</div>
-	
+	<input class="submit" type="submit" name="cliente_info" value="Finalizar Compra">
+	</form>
+		<?php } ?>
 </div>
 
 

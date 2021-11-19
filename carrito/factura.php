@@ -79,18 +79,19 @@ $query = "SELECT * FROM factura WHERE idFactura = '$fac'";
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				
 					<?php $consulta = $con->query("SELECT * FROM carrito c , producto p WHERE c.idProducto = p.codigo and c.idCarrito = '$idCarrito'");
           while($row = mysqli_fetch_assoc($consulta)) { ?>
+          	<tr>
 					<td><?php echo $row['codigo'];?></td>
 					<td><?php echo $row['Nombre'];?></td>
-					<td><?php echo $row['Precio'];?></td>
+					<td><?php echo "US$",$row['Precio'];?></td>
 					<td><?php echo $row['cantidad'];?></td>
-					<td><?php echo $row['subTotal'];?></td>
+					<td><?php echo "US$",$row['subTotal'];?></td>
 
-
+					</tr>
 				<?php	} ?>
-				</tr>
+				
 			</tbody>
 		</table>
 
@@ -104,11 +105,11 @@ $query = "SELECT * FROM factura WHERE idFactura = '$fac'";
   				$precioTotal = $row['total'];
   			 }?>
 		<p>Subtotal tasa basica:
-			<?php echo $precioTotal; ?></p>
+			<?php echo "US$ ",$precioTotal; ?></p>
 			<p>IVA tasa basica:
-			<?php echo $precioTotal*0.22; ?></p>
+			<?php echo "US$ ",$precioTotal*0.22; ?></p>
 			<p>Precio Total:
-			<?php echo "US$",$precioTotal+$precioTotal*0.22; ?></p>
+			<?php echo "US$ ",$precioTotal+$precioTotal*0.22; ?></p>
 	</div>
 	</div>
 

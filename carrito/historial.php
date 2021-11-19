@@ -8,7 +8,7 @@
 	<title>carrito</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap">
 	<link rel="stylesheet" href="css\all.min.css">
-	<link rel="stylesheet" type="text/css" href="css1/cssmain.css">
+	<link rel="stylesheet" type="text/css" href="css1/historial.css">
 	
 </head>
 <body>
@@ -115,33 +115,22 @@
   				$row = mysqli_fetch_array($result);
     			$ci = $row['CI'];
   			}
-
-		# $query = "SELECT * FROM factura WHERE codigoCliente = '$ci'";
-  		#	$result = mysqli_query($con, $query);
-  		#	if (mysqli_num_rows($result) >= 1) {
-  		#		$row = mysqli_fetch_array($result);
   				
-  				?><table>
-  					<thead>
-  						<tr>
-  							<th>Codigo Factura</th>
-  						</tr>
-  					</thead>
-<?php
+  				?>
+  				<table>
+  					<tr><th>Numero de la eFactura</th></tr>
+ 					 <?php
   				$consulta = $con->query("SELECT * FROM factura WHERE CI = '$ci'"); 
-          while($row = mysqli_fetch_assoc($consulta)) { ?>
+         		 while($row = mysqli_fetch_assoc($consulta)) { ?>
+ 					 <tr>
+ 					   <td><a href="factura.php?CodigoFac=<?php echo $row['idFactura']; ?>"><?php echo "0000",$row['idFactura']; ?></a></td>
+ 					 </tr>
+ 					<?php } ?>
+					</table>
   				
-  				
-  					<tbody>
-  						<tr>
-  							<td>
-  								 <a href="factura.php?CodigoFac=<?php echo $row['idFactura']; ?>"><?php echo $row['idFactura']; ?></a> </td>
-  						</tr>
-  					</tbody>
-  				</table>
-  			<?php }
   			
-  			# USUARIO NORMAL
+  			
+  			<?php
 	 }elseif(isset($_SESSION["usuario"])) { 
 	 	$query = "SELECT * FROM usuario WHERE Email = '$_SESSION[usuario]'";
   			$result = mysqli_query($con, $query);
@@ -156,24 +145,17 @@
   		#		$row = mysqli_fetch_array($result);
   				
   				?><table>
-  					<thead>
-  						<tr>
-  							<th>Codigo Factura</th>
-  						</tr>
-  					</thead>
-<?php
-  				$consulta = $con->query("SELECT * FROM factura WHERE codigoCliente = '$ci'"); 
-          while($row = mysqli_fetch_assoc($consulta)) { ?>
-  				
-  				
-  					<tbody>
-  						<tr>
-  							<td>
-  								 <a href="factura.php?CodigoFac=<?php echo $row['CodigoFac']; ?>"><?php echo $row['CodigoFac']; ?></a> </td>
-  						</tr>
-  					</tbody>
-  				</table>
-  			<?php } } ?>
+  					<tr><th>Numero de la eFactura</th></tr>
+ 					 <?php
+  				$consulta = $con->query("SELECT * FROM factura WHERE CI = '$ci'"); 
+         		 while($row = mysqli_fetch_assoc($consulta)) { ?>
+ 					 <tr>
+ 					   <td><a href="factura.php?CodigoFac=<?php echo $row['idFactura']; ?>"><?php echo "0000",$row['idFactura']; ?></a></td>
+ 					 </tr>
+ 					<?php } ?>
+					</table>
+
+				<?php } ?>
 </div>
 
 
